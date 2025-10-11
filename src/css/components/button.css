@@ -1,0 +1,45 @@
+.btn-add{
+    height: 28px;
+    font-weight: 500;
+    border: none;
+    background-color: #2ca01c;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.btn-add:hover{
+    background-color: #50B83C;
+    cursor: pointer;
+}
+
+.btn-add .text{
+    line-height: 28px;
+    padding: 0 12px;
+    font-size: 12px;
+    font-family: Notosans-semibold;
+}
+
+.btn-add:focus, .btn-default:focus{
+    background-color: #2a6d1d;
+    cursor:pointer;
+    outline: unset;
+}
+
+.btn-default{
+    height: 36px;
+    font-weight: 500;
+    border: none;
+    background-color: #2ca01c;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.btn-default:hover{
+    background-color: #57C841;
+    cursor: pointer;
+}
+
+.optionalBtn:hover{
+    background-color: #e0e0e0;
+    cursor: pointer;
+}

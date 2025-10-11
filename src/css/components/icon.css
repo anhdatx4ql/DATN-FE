@@ -1,0 +1,238 @@
+.icon{
+    height: 24px;
+    width: 24px;
+}
+
+.dashboard{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -30px -1628px;
+}
+
+.money{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -73px -1628px;
+}
+
+.s-money{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -117px -1628px;
+}
+
+.buy{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -161px -1628px;
+}
+
+.sell{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -205px -1628px;
+}
+
+.order{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -250px -1628px;
+}
+
+.tools{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -335px -1628px;
+}
+
+.asset{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -378px -1628px;
+}
+
+.report{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -548px -1628px;
+}
+
+.price{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -467px -1628px;
+}
+
+.tax{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -423px -1628px;
+}
+
+.synthetic{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -510px -1628px;
+}
+
+.budget{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -378px -1660px;
+}
+
+.option-icon{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -843px -30px;
+
+}
+
+.dropdown-icon{
+    margin-top: 6px;
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -1129px -365px;
+    border: unset;
+}
+
+.dropdown-icon-2{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -1070px -29px;
+}
+
+.notification-icon{
+    margin-top: 0px;
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -788px -30px;
+}
+
+.avatar-icon{
+    margin-top: 0px;
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -352px -894px;
+}
+
+.search-icon{
+    background: url('/src/assets/icons/icons8-search-50.png');
+    background-size: 20px 20px;
+    height: 20px;
+    width: 20px;
+}
+
+.reload-icon{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -425px -201px;
+    margin-right: 12px;
+}
+
+.edit-icon{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -897px -360px;
+    height: 15px;
+    width: 15px;
+    margin-left: 5px;
+}
+
+.help-icon{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -732px -31px;
+}
+
+.reload-icon:hover, .notification-icon{
+    cursor: pointer;
+}
+
+.help-icon:hover{
+    cursor: pointer;
+}
+
+.close-icon{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -145px -145px;
+}
+
+.dialog-icon{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -832px -462px;
+    position: relative;
+    left: -10px;
+    top: 3px
+}
+.dialog-delete-icon{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -598px -463px;
+    height: 36px;
+    width: 37px;
+}
+
+.dialog-success-icon{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -1602px -258px;
+}
+
+.export-excel-icon{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -705px -200px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.ui-setting{
+    background: url('/src/assets/img/Sprites.64af8f61.svg') no-repeat -90px -199px;
+    margin: 1px 22px 0px 12px;
+}
+
+.dialog-warning-icon{
+    background: url('/src/assets/icons/warning.png');
+    background-size: 24px 24px;
+}
+
+.dialog-error-icon{
+    background: url('/src/assets/icons/icons8-cancel-48.png');
+    background-size: 24px 24px;
+}
+
+.dialog-info-icon{
+    background: url('/src/assets/icons/information.png');
+    background-size: 24px 24px;
+}
+
+.user-group{
+    background: url('/src/assets/icons/icons8-bulleted-list-48.png');
+    background-size: 24px 24px;
+}
+
+.success-icon {
+    height: 36px;
+    width: 39px;
+    background: url("../../assets/img/Sprites.64af8f61.svg") no-repeat -990px -462px;
+}
+
+.warning-icon {
+    height: 37px;
+    width: 39px;
+    background: url("../../assets/img/Sprites.64af8f61.svg") no-repeat -598px -463px;
+}
+
+.error-icon {
+    height: 36px;
+    width: 39px;
+    background: url("../../assets/img/Sprites.64af8f61.svg") no-repeat -752px -462px;
+}
+
+.info-icon {
+    height: 36px;
+    width: 39px;
+    background: url("../../assets/img/Sprites.64af8f61.svg") no-repeat -672px -462px;
+}
+
+.customer-icon{
+    width: 16px;
+	height: 20px;
+    background: url("../../assets/img/Sprites.64af8f61.svg") no-repeat -874px -202px;
+}
+
+.supplier-icon{
+    width: 20px;
+	height: 20px;
+    background: url("../../assets/img/Sprites.64af8f61.svg") no-repeat -930px -202px;;
+}
+
+.employee-icon{
+    width: 20px;
+	height: 20px;
+    background: url("../../assets/img/Sprites.64af8f61.svg") no-repeat -986px -202px;
+}
+
+.employee-icon-2{
+    width: 22px;
+	height: 20px;
+    background: url("../../assets/img/Sprites.64af8f61.svg") no-repeat -633px -1631px;
+}
+
+.account-icon{
+    width: 21px !important;
+	height: 22px !important;
+    background: url("../../assets/img/Sprites.64af8f61.svg") no-repeat -1378px -257px;
+}
+
+.back-icon{
+    background: url('../../assets/img/Sprites.64af8f61.svg') no-repeat -228px -362px;
+	width: 8px;
+	height: 12px;
+}
+
+.setup-icon{
+    background: url('../../assets/img/Sprites.64af8f61.svg') no-repeat -90px -200px;
+	width: 23px;
+	height: 24px;
+}
+
+.pc-icon{
+    background: url('../../assets/img/Sprites.64af8f61.svg') no-repeat -416px -359px;
+	width: 18px;
+	height: 18px;
+}

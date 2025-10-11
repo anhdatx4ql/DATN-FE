@@ -1,0 +1,149 @@
+/* .table{
+    height: calc(100% - 36px - 24px);
+    overflow: auto;
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    left: 0;
+    table-layout: fixed;
+}
+
+.table-content, tr{
+    border: solid #E0E0E0 1px;
+    border-collapse: collapse;
+    padding: 0px 8px;
+    width: 2000px;
+    min-width: 100%;
+}
+
+th, td{
+    border: dotted #E0E0E0 1px;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    padding: 0px 8px;
+}
+
+th {
+    position: sticky;
+    text-align: left;
+    top: -1px;
+    background-color: #F5F5F5;
+    z-index: 1;
+}   
+
+th:first-child {
+    z-index: 2;
+    left: -1px;
+}
+
+th:last-child {
+    position: sticky;
+    top: -1px;
+    right: -1px;
+    border-left: dotted 1px black;
+}
+
+table tr td:first-child{
+    position: sticky;
+    left: -1px;
+    background-color: #fff;
+}
+
+table tr td:last-child{
+    position: sticky;
+    background-color: #fff;
+    right: -1px;
+}
+
+.table-content td, .table-content th{
+    height: 48px;
+    font-size: 14px;
+}
+
+.table-content tr:hover, .table-content tr:hover td:first-child, .table-content tr:hover td:last-child{
+    background-color: #F8F8F8 !important;
+}
+
+.table .checkbox{
+    margin-right: 10px;
+    height: 22px;
+    width: 22px;
+    z-index: 3;
+}
+ 
+.employee-id{
+    width: 150px;
+}
+
+.employee-name{
+    width: 250px;
+}
+
+.employee-gender{
+    width: 100px;
+}
+
+.employee-dob{
+    width: 200px;
+}
+
+.employee-number{
+    width: 250px;
+}
+
+.employee-position{
+    width: 200px;
+}
+
+.employee-department{
+    width: 250px;
+}
+
+.employee-payment{
+    width: 200px;
+}
+
+.employee-payment__bank{
+    width: 250px;
+}
+
+.employee-payment__locate{
+    width: 250px;
+}
+
+table .edit{
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    border: unset;
+    justify-content: center;
+    width: 100px;
+}
+
+table .edit:hover{
+    cursor: pointer;
+}
+
+table .edit:hover .edit-menu{
+    display: block;
+}
+
+.employee-dob{
+    text-align: center !important;
+    padding: 0px;
+}
+
+.align-center{
+    text-align: center;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em
+}
+::-webkit-scrollbar-track-piece {
+    background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #E6E6E6;
+} */

@@ -1,0 +1,71 @@
+.header{
+    height: 68px;
+    width: calc(100% - 200px);
+    float: left;
+    display: flex;
+
+}
+
+.header-leftside{
+    height: 100%;
+    width: 600px;
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.header-leftside__option{
+    height: 24px;
+    width: 24px;
+    margin-left: 16px;
+}
+
+.header-leftside__context{
+    height: 24px;
+    flex: 1;
+    display: flex;
+    column-gap: 4px;
+}
+
+.header-leftside__context .text{
+    height: 100%;
+}
+
+.header-leftside__context .dropdown{
+    height: 24px;
+    width: 24px;
+}
+
+.header-rightside{
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 26px;
+}
+
+.header-rightside__notification{
+    height: 24px;
+    width: 24px;
+}
+
+.header-rightside__account{
+    height: 32px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+}
+
+.header-rightside__account .username{
+    height: 23px;
+    line-height: 23px;
+    font-size: 14px;
+}
+
+.header-rightside__account .action{
+    height: 24px;
+    width: 24px;
+}
+

@@ -1,0 +1,8 @@
+.menu-area .router-link-active{
+    text-decoration: none;
+    background: linear-gradient(90deg, #2ca01c 0 3%, #58595d 3% 100%);
+}
+
+.router-link-active .menu-item__context{
+    font-family: Notosans-bold !important;
+}

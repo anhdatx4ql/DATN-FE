@@ -1,0 +1,75 @@
+@keyframes showAni {
+    from{
+        background-color: #89898912;
+    }
+    to{
+        background-color: #898989cc;
+    }
+}
+
+@keyframes close {
+    from{
+        background-color: #898989cc;
+    }
+    to{
+        background-color: #89898900;
+    }
+}
+
+@keyframes popup-close {
+    from{
+        width: 50%;
+    }
+    to{
+        width: 0%;
+    }
+}
+
+@keyframes popup-open {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 50%;
+    }
+}
+
+@keyframes toast-close {
+    from{
+        margin-left: 0px;
+    }
+    to{
+        margin-left: 500px;
+    }
+}
+
+@keyframes toast-open {
+    from{
+        margin-left: 500px;
+    }
+    to{
+        margin-left: 0px;
+    }
+}
+
+@keyframes loading {
+    to {
+        background-position-x: -20%;
+    }
+}
+
+@keyframes searchGrow {
+    to {
+        width: 250px;
+    }
+}
+
+@keyframes searchCollase {
+    from{
+        width: 250px;
+    }
+
+    to {
+        width: 100px;
+    }
+}

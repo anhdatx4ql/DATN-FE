@@ -1,0 +1,18 @@
+.tooltip{
+    min-height: 36px;
+    min-width: 150px;
+    border-radius: 4px;
+    background-color: #555;
+    position: absolute;
+    top: 70px;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+}
+
+.tooltip-text {
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    margin: 8px 12px
+}

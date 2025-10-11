@@ -1,0 +1,123 @@
+@import url(../css/components/button.css);
+@import url(../css/components/footer.css);
+@import url(../css/components/header.css);
+@import url(../css/components/content.css);
+@import url(../css/components/menu.css);
+@import url(../css/components/icon.css);
+@import url(../css/components/table.css);
+@import url(../css/components/popup.css);
+@import url(../css/components/dialog.css);
+@import url(../css/components/animation.css);
+@import url(../css/components/toast.css);
+@import url(../css/components/dropdown.css);
+@import url(../css/components/input.css);
+@import url(../css/components/combobox.css);
+@import url(../css/components/tooltip.css);
+@import url(../css/components/responsive.css);
+@import url(../css/components/loading.css);
+@import url(../css/components/grid-data.css);
+@import url(../css/components/router.css);
+body{
+    margin: 0px;
+    background-color: #eceef1;
+}
+@font-face {
+    font-family: Notosans;
+    src: url("../assets/fonts/notosans-regular.2cb88a13.woff2");
+}
+@font-face {
+    font-family: Notosans-semibold;
+    src: url("../assets/fonts/notosans-semibold.df3e6dc4.woff2");
+}
+@font-face {
+    font-family: Notosans-bold;
+    src: url("../assets/fonts/notosans-bold.3ede5aff.woff2");
+}
+@font-face {
+    font-family: Roboto;
+    src: url("../assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+    font-family: Opens-san;
+    src: url("../assets/fonts/Open_Sans/static/OpenSans/OpenSans-Regular.ttf");
+}
+@font-face {
+    font-family: Opens-san-bold;
+    src: url("../assets/fonts/Open_Sans/static/OpenSans/OpenSans-Bold.ttf");
+}
+@font-face {
+    font-family: Opens-san-semi-bold;
+    src: url("../assets/fonts/Open_Sans/static/OpenSans/OpenSans-SemiBold.ttf");
+}
+@font-face {
+    font-family: Opens-san-medium;
+    src: url("../assets/fonts/Open_Sans/static/OpenSans/OpenSans-Medium.ttf");
+}
+@font-face {
+    font-family: OpenSans_Condensed;
+    src: url("../assets/fonts/Open_Sans/static/OpenSans_Condensed/OpenSans_Condensed-Regular.ttf");
+}
+@font-face {
+    font-family: Poppins;
+    src: url("@/assets/fonts/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: Poppins-bold;
+    src: url("@/assets/fonts/Poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+    font-family: Poppins-italic;
+    src: url("@/assets/fonts/Poppins/Poppins-Italic.ttf");
+}
+
+@font-face {
+    font-family: Poppins-semibold;
+    src: url("@/assets/fonts/Poppins/Poppins-SemiBold.ttf");
+}
+*{
+    font-family: Notosans;
+    margin: 0;
+    padding: 0;
+}
+
+.bold-text{
+    font-family: Opens-san-bold;
+}
+
+a{
+    text-decoration: none;
+}
+
+.align-center{
+    text-align: center;
+    padding: 0 ;
+}
+
+.align-right{
+    text-align: right;
+    padding: 0 ;
+}
+
+.disable input{
+    background-color: #f0f0f0 !important;
+  }
+
+::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+    z-index: 99999999;
+}
+::-webkit-scrollbar-track-piece {
+    background-color: #e0e0e0;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #a3a3a3;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

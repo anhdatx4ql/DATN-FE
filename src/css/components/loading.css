@@ -1,0 +1,14 @@
+.loading{
+    background-color: #E0E0E0;
+    background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 60%
+    ) #F5F5F5;
+    background-size: 200% 100%;
+    background-position-x: 120%;
+    animation: 1s loading ease-in-out infinite;
+    height: 24px;
+    width: 100%;
+}
