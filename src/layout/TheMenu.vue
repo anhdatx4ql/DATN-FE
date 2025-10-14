@@ -1,5 +1,5 @@
 // Component hiển thị phần menu dùng chung của website
-// Author: Xuân Đào (05/03/2023)
+// Author: pvdat (05/03/2023)
 <template>
     <div class="menu">
         <!-- Phần hiển thị chính của menu bar -->
@@ -60,48 +60,6 @@
                     <div class="icon sell"></div>
                 </div>
                 <div class="menu-item__context">{{ 'Nhà cung cấp' }}</div>
-            </router-link>
-            <div class="menu-item">
-                <div class="menu-item__icon">
-                    <div class="icon buy"></div>
-                </div>
-                <div class="menu-item__context">{{ data[3] }}</div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-item__icon">
-                    <div class="icon tools"></div>
-                </div>
-                <div class="menu-item__context" :title="data[6]">{{ data[6] }}</div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-item__icon">
-                    <div class="icon report"></div>
-                </div>
-                <div class="menu-item__context" id="report">{{ data[8] }}</div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-item__icon">
-                    <div class="icon price"></div>
-                </div>
-                <div class="menu-item__context">{{ data[9] }}</div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-item__icon">
-                    <div class="icon synthetic"></div>
-                </div>
-                <div class="menu-item__context">{{ data[11] }}</div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-item__icon">
-                    <div class="icon budget"></div>
-                </div>
-                <div class="menu-item__context">{{ data[12] }}</div>
-            </div>
-            <router-link to="/DI" class="menu-item">
-                <div class="menu-item__icon">
-                    <div class="icon user-group"></div>
-                </div>
-                <div class="menu-item__context">{{ data[13] }}</div>
             </router-link>
         </div>
     </div>

@@ -216,7 +216,7 @@
       /**
        * Xóa hàng loạt bản ghi
        * 
-       * @author Xuân Đào (14/03/2023)
+       * @author pvdat (14/03/2023)
        */
       multipleDelete() {
         this.deleteRecord(null, deleteType.multipleDelete);
@@ -225,7 +225,7 @@
       /**
        * Check số lượng bản ghi được chọn
        * 
-       * @author Xuân Đào (14/03/2023)
+       * @author pvdat (14/03/2023)
        */
       selectMultiple(num) {
         if (num > 1) this.enableMultipleEditor = true;
@@ -235,7 +235,7 @@
       /**
        * Cập nhật api phân trang
        * 
-       * @author Xuân Đào (14/03/2023)
+       * @author pvdat (14/03/2023)
        */
       updateAPIString(pageSize, pageNumber) {
         this.APIString = `${this.res.endpoint}Employee/Filter?pageSize=${pageSize}&pageNumber=${pageNumber}&keyWord=${this.keyWord}`;
@@ -247,7 +247,7 @@
       /**
        * Hàm cập nhật tổng số bản ghi
        * @param {*} total tổng số bản ghi
-       * @author Xuân Đào (20/03/2023)
+       * @author pvdat (20/03/2023)
        */
       updateTotal(total) {
         this.totalRecord = total;
@@ -266,7 +266,7 @@
        * Hàm format việc hiển thị ngày tháng đúng định dạng
        * @param data dữ liệu ngày cần format
        *
-       * Author: Xuân Đào (02/03/2023)
+       * Author: pvdat (02/03/2023)
        */
       formatDate(data) {
         const dateVal = new Date(data);
@@ -281,7 +281,7 @@
       /**
        * Hàm format dữ liệu ngày thàng
        *
-       * Author: Xuân Đào (03/03/2023)
+       * Author: pvdat (03/03/2023)
        */
        readableDateFormater(data) {
         const date = new Date(data);
@@ -296,7 +296,7 @@
       },
       /**
        * Hàm hiển thị popup thêm nhân viên
-       * @author Xuân Đào 02.03.2023
+       * @author pvdat 02.03.2023
        */
       showPopup() {
         this.isShowPopup = true;
@@ -304,7 +304,7 @@
   
       /**
        * Hàm hiển thị popup thêm nhân viên
-       * Author: Xuân Đào (02/03/2023)
+       * Author: pvdat (02/03/2023)
        */
       async showNewPopup() {
         this.action = formAction.createRecord;
@@ -337,7 +337,7 @@
   
       /**
        * Hàm đóng thị popup thêm nhân viên
-       * Author: Xuân Đào (02/03/2023)
+       * Author: pvdat (02/03/2023)
        */
       closePopup() {
         this.isShowPopup = false;
@@ -346,7 +346,7 @@
       /**
        * Hàm double click để sửa 1 nhân viên
        * @param employee Lấy ra nhân viên được click
-       * Author: Xuân Đào (02/03/2023)
+       * Author: pvdat (02/03/2023)
        */
       editOnDbClick(employee) {
         this.selectedEmployee = employee;
@@ -358,7 +358,7 @@
       /**
        * Hàm hiển thị context menu
        *
-       * Author: Xuân Đào
+       * Author: pvdat
        */
       editOnClick(event) {
         event.target.nextElementSibling.style.display = "block";
@@ -417,7 +417,7 @@
       /**
        * Hàm xóa một bản ghi trong database
        *
-       * Author: Xuân Đào (07/03/2023)
+       * Author: pvdat (07/03/2023)
        */
       deleteRecord(employee, type) {
         if (type === deleteType.singleDelete || typeof(type) == 'undefined') {
@@ -432,7 +432,7 @@
       /**
        * Hàm hiển thị xác nhận xóa
        *
-       * Author: Xuân Đào (08/03/2023)
+       * Author: pvdat (08/03/2023)
        */
       showDeleteDialog(deleteType) {
         this.deleteDialog = true;
@@ -444,7 +444,7 @@
       /**
        * Ẩn popup xác nhận xóa
        *
-       * Author: Xuân Đào (08/03/2023)
+       * Author: pvdat (08/03/2023)
        */
       closeDeleteDialog() {
         this.deleteDialog = false;
@@ -500,7 +500,7 @@
       /**
        * Filter khi nhập tìm kiếm
        * 
-       * @author Xuân Đào (23/03/2023)
+       * @author pvdat (23/03/2023)
        */
       searchOnInput(key) {
         this.keyWord = key ? key:"";
@@ -510,7 +510,7 @@
       /**
        * Xuất dữ liệu hiện tại ra excel
        * 
-       * @author Xuân Đào (23/03/2023)
+       * @author pvdat (23/03/2023)
        */
       async excelExport() {
         this.Loader.showLoader();
@@ -538,7 +538,7 @@
       /**
        * Hàm nhân bản nhân viên
        *
-       * @author  Xuân Đào (12/03/2023)
+       * @author  pvdat (12/03/2023)
        */
       async duplicateEmployee(employee){
         this.action = formAction.duplicateRecord;
@@ -555,7 +555,7 @@
       /**
        * Reload lại grid data
        *
-       * @author  Xuân Đào (12/03/2023)
+       * @author  pvdat (12/03/2023)
        */
       updateGridData(employee){
        this.$refs.gridData.gridData.push(employee);
@@ -565,7 +565,7 @@
       /**
        * Hiển thị thông báo tính năng đang được phát triển
        *
-       * @author  Xuân Đào (12/03/2023)
+       * @author  pvdat (12/03/2023)
        */
       showDeveloping(){
         this.$refs.singleDialog.showDialogOn(dialogType.info, resources.vi.dialogMessage.developing, resources.vi.btnAction.close)
@@ -574,7 +574,7 @@
       /**
        * Hàm load lại popup
        *
-       * @author  Xuân Đào (12/03/2023)
+       * @author  pvdat (12/03/2023)
        */
       reloadEmployeeDetail(){
         this.closePopup();

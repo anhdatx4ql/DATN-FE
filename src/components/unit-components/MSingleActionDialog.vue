@@ -1,5 +1,5 @@
 // Component hiển thị cảnh báo xác nhận khi dữ liệu bị thay đổi
-// Author: Xuân Đào (05/03/2023)
+// Author: pvdat (05/03/2023)
 <template>
   <div class="dialog" v-if="showDialog" :key="dialogKey" @keydown="handleOnKeyDown" id="confirmDialog">
     <div class="dialog-content">
@@ -68,7 +68,7 @@ export default {
     /**
      * Hàm hiển thị dialog
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     showDialogOn(type, msg, bMsg){
       this.dialogType = type;
@@ -89,7 +89,7 @@ export default {
     /**
      * Xử lý sự kiện bàn phím 
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     handleOnKeyDown(){
       if(event.key == "Escape" || event.key == "Enter"){
@@ -100,7 +100,7 @@ export default {
     /**
      * Click dialog button
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     btnClick(){
       this.showDialog = false;

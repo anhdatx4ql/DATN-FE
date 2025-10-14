@@ -200,7 +200,7 @@ export default {
     /**
      * Bôi đen toàn bộ dữ liệu khi input được focus
      * 
-     * @author Xuân Đào (12/05/2023)
+     * @author pvdat (12/05/2023)
      */
     inputOnFocus(){
       event.target.select();
@@ -208,7 +208,7 @@ export default {
 
     /**
      * Hàm định dạng tiền
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     formatDataMoney() {
       this.gridData.forEach((element) => {
@@ -220,7 +220,7 @@ export default {
      * Hàm focus nhập liệu lỗi
      * @param index: Chỉ số hàng bị lỗi
      * @param elIndex: Chỉ số cột bị lỗi
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     focusElement(index, elIndex) {
       let trList = this.$refs.tbody.children;
@@ -232,7 +232,7 @@ export default {
     /**
      * Hàm định dạng tiền khi input
      * @param type: Kiểu dữ liệu của input
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     inputOnType(type) {
       if (type == "d-money") {
@@ -251,7 +251,7 @@ export default {
     /**
      * Xóa dữ liệu
      * @param inx: vị trí xóa
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     deleteOnClick(inx) {
       let grid = [];
@@ -286,7 +286,7 @@ export default {
 
     /**
      * Hàm binding dữ liệu 2 chiều
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     inputOnInput(type, dataIndex, modelIndex) {
       this.$emit(
@@ -307,7 +307,7 @@ export default {
 
     /**
      * Hàm binding dữ liệu 2 chiều cho combobox
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     comboboxOnSelect(data) {
       this.$emit("comboOnChange", this.currentElementIndex + 1, data);
@@ -315,7 +315,7 @@ export default {
 
     /**
      * Hàm định dạng tiền
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     formatMoney(amount, decimalCount = 0, decimal = ",", thousands = ".") {
       decimalCount = Math.abs(decimalCount);
@@ -341,7 +341,7 @@ export default {
     /**
      * Hàm cập nhật hàng được chọn và cho phép sửa
      * @param indexL Chỉ số hàng được chọn
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     rowOnClick(index) {
       if (event.target.classList[0] === "delete-icon") return;
@@ -367,7 +367,7 @@ export default {
 
     /**
      * Khởi tạo cho phép thay đổi độ rông cột
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     resizableGrid(table) {
       var row = table.getElementsByTagName("tr")[0],

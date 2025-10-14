@@ -160,7 +160,7 @@ export default {
 
     /**
      * Hàm lấy mẫu ngầm định
-     * @author Xuân Đào (13/05/2023)
+     * @author pvdat (13/05/2023)
      */
     setDefaultUI(){
       this.sortData = accountListFull;
@@ -173,7 +173,7 @@ export default {
 
     /**
      * Hàm lưu ui đã chọn
-     * @author Xuân Đào (13/05/2023)
+     * @author pvdat (13/05/2023)
      */
     saveUI(){
       let activeUI = 0;
@@ -190,7 +190,7 @@ export default {
 
     /**
      * Hàm check / uncheck toàn bộ hàng
-     * @author Xuân Đào (13/05/2023)
+     * @author pvdat (13/05/2023)
      */
     parentClicked(){
       this.localData.forEach(el => {
@@ -208,7 +208,7 @@ export default {
 
     /**
      * Hàm mở rộng popup
-     * @author Xuân Đào (13/05/2023)
+     * @author pvdat (13/05/2023)
      */
     expandOnClick() {
       if (!this.isExpanded) {
@@ -226,7 +226,7 @@ export default {
 
     /**
      * Hàm lưu thu gọn popup
-     * @author Xuân Đào (13/05/2023)
+     * @author pvdat (13/05/2023)
      */
     collaseOnClick() {
       if (!this.collase) {

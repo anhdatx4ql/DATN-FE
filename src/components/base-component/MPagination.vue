@@ -65,7 +65,7 @@ export default {
       /**
        * Hàm định dạng hiển thị tổng số bản ghi
        * 
-       * @author Xuân Đào (11/05/2023)
+       * @author pvdat (11/05/2023)
        */
       totalRecordFormated(){
         return this.formatMoney(this.totalRecord);
@@ -129,7 +129,7 @@ export default {
      * @param amount: Số tiền
      * @param decimalCount: Số lượng số sau dấu phẩy
      * @param thousands: Ngăn cách hàng nghìn
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
      formatMoney(amount, decimalCount = 0, decimal = "", thousands = ".") {
       decimalCount = Math.abs(decimalCount);
@@ -143,7 +143,7 @@ export default {
     /**
      * Quay lại trang trước
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
       previousPage(){
         if (this.currentPage > 1) {
@@ -155,7 +155,7 @@ export default {
     /**
      * Tới trang tiếp theo
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
       nextPage(){
         if (this.currentPage < this.totalPage) {
@@ -167,7 +167,7 @@ export default {
     /**
      * Cập nhật dữ liệu khi api thay đổi
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
       updateVal(newVal){
         this.defaultValue = newVal;
@@ -200,7 +200,7 @@ export default {
     /**
      * Đi tới page được chỉ định
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
       pageNumberOnClick(){
         if (!isNaN(Number(event.target.textContent))){
@@ -212,7 +212,7 @@ export default {
     /**
      * Reset page được chọn
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
       resetSelected(){
         this.$emit("updateAPI", this.pageSize, this.currentPage)

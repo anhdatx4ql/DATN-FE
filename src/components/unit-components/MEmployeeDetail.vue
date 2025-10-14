@@ -1,5 +1,5 @@
 // Component hiển thị mà hình popup cho phép thêm nhân viên mới
-// Author: Xuân Đào (05/03/2023)
+// Author: pvdat (05/03/2023)
 <template>
   <div class="popup" @keydown="keyboardHandle" id="popupId">
     <div class="popup-main" id="popupMain">
@@ -307,7 +307,7 @@ export default {
     /**
      * Hàm format dữ liệu ngày thàng
      *
-     * Author: Xuân Đào (03/03/2023)
+     * Author: pvdat (03/03/2023)
      */
      readableDateFormater(data) {
       const date = new Date(data);
@@ -325,7 +325,7 @@ export default {
      * Hàm format việc hiển thị ngày tháng đúng định dạng
      * @param data dữ liệu ngày cần format
      *
-     * Author: Xuân Đào (02/03/2023)
+     * Author: pvdat (02/03/2023)
      */
      formatDate(data) {
       const dateVal = new Date(data);
@@ -351,7 +351,7 @@ export default {
     /**
      * Hàm đóng popup hiện tại
      *
-     * Author: Xuân Đào (03/03/2023)
+     * Author: pvdat (03/03/2023)
      */
     closePopup() {
       if (JSON.stringify(this.CURRENT_DATA) != JSON.stringify(this.employee)) {
@@ -363,7 +363,7 @@ export default {
     /**
      * Hàm mở thông báo xác nhận đóng popup khi dữ liệu bị thay đổi
      *
-     * Author: Xuân Đào (03/03/2023)
+     * Author: pvdat (03/03/2023)
      */
     openConfirmDialog() {
       this.confirmDialog = true;
@@ -371,7 +371,7 @@ export default {
     /**
      * Hàm xử lý sự kiện khi click các button trên dialog
      *
-     * Author: Xuân Đào(03/03/2023)
+     * Author: pvdat(03/03/2023)
      */
     undoData() {
       this.employee = this.CURRENT_DATA;
@@ -380,7 +380,7 @@ export default {
     /**
      * Hàm đóng confirm dialog
      *
-     * Author: Xuân Đào(05/03/2023)
+     * Author: pvdat(05/03/2023)
      */
     closeDialog() {
       this.confirmDialog = false;
@@ -389,7 +389,7 @@ export default {
     /**
      * Hàm handle sự kiện bàn phím
      *
-     * Author: Xuân Đào (05/03/2023)
+     * Author: pvdat (05/03/2023)
      */
     async handleKeyDown(event) {
       if (event.ctrlKey && event.key === 's'){
@@ -416,7 +416,7 @@ export default {
     /**
      * Hàm xử lý tab order của người dùng
      *
-     * Author: Xuân Đào (05/03/2023)
+     * Author: pvdat (05/03/2023)
      */
     cancelOnKeyDown() {
       if (event.keyCode == 9) this.$refs.closeBtn.focus();
@@ -425,7 +425,7 @@ export default {
     /**
      * Hàm thêm mới một bản ghi vào db
      *
-     * Author: Xuân Đào (06/03/2023)
+     * Author: pvdat (06/03/2023)
      */
     async createRecord(newEmployee){
       try {
@@ -445,7 +445,7 @@ export default {
     /**
      * Hàm cập nhật thông tin một bản ghi
      * 
-     * @author Xuân Đào (14/03/2023)
+     * @author pvdat (14/03/2023)
      */
     async updateRecord(newEmployee){
       try {
@@ -467,7 +467,7 @@ export default {
     /**
      * Validate dữ liệu truyền lên api
      * 
-     * @author Xuân Đào (14/03/2023)
+     * @author pvdat (14/03/2023)
      */
     valueValidate(){
 
@@ -489,7 +489,7 @@ export default {
     /**
      * Sự kiện cất và thêm
      *
-     * Author: Xuân Đào (05/03/2023)
+     * Author: pvdat (05/03/2023)
      */
     async saveData(reload) {
       this.closeDialog();
@@ -577,7 +577,7 @@ export default {
     /**
      * Hàm đóng confirm dialog và save data
      *
-     * Author: Xuân Đào (07/03/2023)
+     * Author: pvdat (07/03/2023)
      */
     closeSave() {
       this.saveData();
@@ -587,7 +587,7 @@ export default {
     /**
      * Hàm hiển thị popup đang phát triển
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     showDeveloping(){
       this.$refs.singleDialog.showDialogOn(dialogType.info, resources.vi.dialogMessage.developing, resources.vi.btnAction.close)
@@ -596,7 +596,7 @@ export default {
     /**
      * Hàm set focus vào ô lỗi đầu tiên khi đóng dialog
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     dialogClosed(){
       if (this.currentError)
@@ -606,7 +606,7 @@ export default {
     /**
      * Hàm lấy mã giới tính
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     getGenderCode(name){
       switch(name){
@@ -620,7 +620,7 @@ export default {
     /**
      * Hàm lấy dữ liệu từ popup
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     getInputData(){
       try{

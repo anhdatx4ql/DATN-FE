@@ -7,24 +7,16 @@ let resources =  {
             0: "CÔNG TY TNHH SẢN XUẤT - THƯƠNG MẠI - DỊCH VỤ - QUÝ PHÚC"
         },
         username: {
-            0: "Trịnh Xuân Đào"
+            0: "Phạm Văn Đạt"
         },
         menuItem:{
             0: "Tổng quan",
             1: "Tiền mặt",
             2: "Tiền gửi",
-            3: "Mua hàng",
             4: "Bán hàng",
             5: "Quản lý đơn",
-            6: "Công cụ",
             7: "Tài sản cố định",
-            8: "Báo cáo",
-            9: "Giá thành",
             10: "Thuế",
-            11: "Tổng hợp",
-            12: "Ngân sách",
-            13: "Danh mục",
-
         },
         employeeDetail:{
             createTitle: "Thông tin nhân viên",
@@ -322,7 +314,7 @@ let resources =  {
         errorMes: "Oops, something went wrong contact MISA!"
     },
 
-    endpoint: "https://equipmentsys.azurewebsites.net/api/"
+    endpoint: "https://localhost:44381/api/"
 }
 
 export default resources

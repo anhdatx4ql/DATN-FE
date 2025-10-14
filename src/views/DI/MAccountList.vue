@@ -179,7 +179,7 @@ export default {
     /**
      * Hàm xử lý sự kiện bàn phím 
      * 
-     * @authod Xuân Đào (01/05/2023)
+     * @authod pvdat (01/05/2023)
      */
     handleKeyDown(){
       if (event.ctrlKey && event.key === '1'){
@@ -201,7 +201,7 @@ export default {
     /**
      * Hàm xử lấy mẫu ngầm định 
      * 
-     * @authod Xuân Đào (09/05/2023)
+     * @authod pvdat (09/05/2023)
      */
     setDefaultUI(){
       this.UISetting = false;
@@ -211,7 +211,7 @@ export default {
     /**
      * Hàm áp dụng tùy chỉnh giao diện 
      * 
-     * @authod Xuân Đào (09/05/2023)
+     * @authod pvdat (09/05/2023)
      */
     applyUI(result){
       let newUI = [];
@@ -230,7 +230,7 @@ export default {
     /**
      * Hàm thay đổi dữ liệu khi đổi vị trí cột 
      * 
-     * @authod Xuân Đào (09/05/2023)
+     * @authod pvdat (09/05/2023)
      */
     columnSwapped(newIndex, oldIndex){
       let oldAccount = this.AccountList[oldIndex]
@@ -253,7 +253,7 @@ export default {
     /**
      * Hàm xử tìm kiếm dữ liệu 
      * 
-     * @authod Xuân Đào (01/05/2023)
+     * @authod pvdat (01/05/2023)
      */
     searchOnInput(value){
       this.$refs.gridData.sortedData = this.sortedData;
@@ -272,7 +272,7 @@ export default {
     /**
      * Hàm tìm kiếm tài khoản theo keyword
      * 
-     * @authod Xuân Đào (01/05/2023)
+     * @authod pvdat (01/05/2023)
      */
     searchByKeyword(keyword){
       let indexs = [];
@@ -316,7 +316,7 @@ export default {
     /**
      * Hàm cập nhật trạng thái grid
      * @param action - Đóng / mở
-     * @authod Xuân Đào (29/04/2023)
+     * @authod pvdat (29/04/2023)
      */
     updateAction(action){
       if (action == Action.expand){
@@ -331,7 +331,7 @@ export default {
     /**
      * Hàm đóng / mở toàn bộ grid
      * 
-     * @authod Xuân Đào (29/04/2023)
+     * @authod pvdat (29/04/2023)
      */
     gridOnAction(){
       this.$refs.gridData.foldOrExpandAll(this.gAction);
@@ -340,7 +340,7 @@ export default {
     /**
      * Hàm xuất dữ liệu ra excel
      * 
-     * @authod Xuân Đào (28/04/2023)
+     * @authod pvdat (28/04/2023)
      */
     async excelExport(){
       this.Loader.showLoader();
@@ -378,7 +378,7 @@ export default {
     /**
      * Hàm nhân bản tài khoản
      * 
-     * @authod Xuân Đào (28/04/2023)
+     * @authod pvdat (28/04/2023)
      */
     updateAccount(account){
       this.showNewPopup(formMode.duplicate, account);
@@ -435,7 +435,7 @@ export default {
     /**
      * Hàm đóng popup cảnh báo
      * 
-     * @authod Xuân Đào (28/04/2023)
+     * @authod pvdat (28/04/2023)
      */
     closeDeleteDialog(){
       this.showConfirm = false;
@@ -444,7 +444,7 @@ export default {
     /**
      * Hàm cập nhật trạng thái grid khi thêm mới thành công
      * 
-     * @authod Xuân Đào (28/04/2023)
+     * @authod pvdat (28/04/2023)
      */
     closeDetailOnSuccess(){
       this.closeDetail();
@@ -454,7 +454,7 @@ export default {
     /**
      * Hàm sửa khi double click grid
      * 
-     * @authod Xuân Đào (27/04/2023)
+     * @authod pvdat (27/04/2023)
      */
     itemOnDbClick(item){
       this.showNewPopup(formMode.modify, item);
@@ -463,7 +463,7 @@ export default {
     /**
      * Hàm hiển thị popup tài khoản
      * 
-     * @authod Xuân Đào (27/04/2023)
+     * @authod pvdat (27/04/2023)
      */
     showNewPopup(mode, data){
       this.formMode = mode;
@@ -475,7 +475,7 @@ export default {
     /**
      * Hàm đóng popup tài khoản
      * 
-     * @authod Xuân Đào (27/04/2023)
+     * @authod pvdat (27/04/2023)
      */
     closeDetail(){
       this.showDetail = false;
@@ -484,7 +484,7 @@ export default {
     /**
      * Hàm xử lý khi load xong grid
      * 
-     * @authod Xuân Đào (27/04/2023)
+     * @authod pvdat (27/04/2023)
      */
     gridLoaded(){
       this.sortedData = this.$refs.gridData.sortedData;
@@ -498,7 +498,7 @@ export default {
     /**
      * Hàm định dạng dữ liệu hiển thị
      * 
-     * @authod Xuân Đào (27/04/2023)
+     * @authod pvdat (27/04/2023)
      */
     formatDisplayData(){
       for(let i = 0;i < this.sortedData.length; i++){
@@ -540,7 +540,7 @@ export default {
      * Hàm yêu cầu xóa tài khoản
      * @param data: dữ liệu
      * @param type: kiểu xóa - single/multiple
-     * @authod Xuân Đào (27/04/2023)
+     * @authod pvdat (27/04/2023)
      */
     deleteRecord(data, type){
       if (type === deleteType.singleDelete) {
@@ -582,7 +582,7 @@ export default {
     /**
      * Hàm tìm tài khoản cha
      * 
-     * @authod Xuân Đào (27/04/2023)
+     * @authod pvdat (27/04/2023)
      */
     findParent(arr, data) {
       for (let i = 0; i < arr.length; i++) {
@@ -593,7 +593,7 @@ export default {
     /**
      * Hàm chèn dữ liệu vào mảng
      * 
-     * @authod Xuân Đào (26/04/2023)
+     * @authod pvdat (26/04/2023)
      */
     insertToPosition(arr, index, data) {
       let result = [];
@@ -612,7 +612,7 @@ export default {
      * Hàm cập nhật trạng thái tài khoản
      * @param: account - tài khoản cập nhật
      * @param: index - chỉ số tài khoản
-     * @authod Xuân Đào (26/04/2023)
+     * @authod pvdat (26/04/2023)
      */
     async updateAccountStatus(account, index){
       try {
@@ -686,7 +686,7 @@ export default {
     /**
      * Hàm lấy danh sách tài khoản con theo index
      * @param index: Chỉ số tài khoản cha
-     * @authod Xuân Đào (25/04/2023)
+     * @authod pvdat (25/04/2023)
      */
     GetChildList(index){
       let list = [];
@@ -701,7 +701,7 @@ export default {
     /**
      * Hàm cập nhật trạng thái các tài khoản bị ảnh hưởng
      * 
-     * @authod Xuân Đào (26/04/2023)
+     * @authod pvdat (26/04/2023)
      */
     async updateChildAccount(){
       const index = this.$refs.gridData.selectedIndex;
@@ -728,7 +728,7 @@ export default {
     /**
      * Hàm cập nhật hàng loạt tài khoản
      * 
-     * @authod Xuân Đào (26/04/2023)
+     * @authod pvdat (26/04/2023)
      */
     async updateMultipleAccount(ids, newStatus){
       try {
@@ -750,7 +750,7 @@ export default {
     /**
      * Hàm lưu tài khoản
      * 
-     * @authod Xuân Đào (26/04/2023)
+     * @authod pvdat (26/04/2023)
      */
     async saveAccount(account){
       try {

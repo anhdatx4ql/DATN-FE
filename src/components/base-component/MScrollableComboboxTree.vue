@@ -363,7 +363,7 @@ export default {
         /**
          * Hàm xóa 1 item khỏi array
          *
-         * @author Xuân Đào (04/04/2023)
+         * @author pvdat (04/04/2023)
          */
         removeItemFromArr(proxy, index) {
         let arr = [];

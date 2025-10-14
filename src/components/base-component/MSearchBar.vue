@@ -49,7 +49,7 @@ export default {
     /**
      * Khi focus vào input
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     inputOnFocus() {
       this.isFocus = true;
@@ -58,7 +58,7 @@ export default {
     /**
      * Khi thoát khỏi input
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     inputOnBlur() {
       this.isFocus = false;
@@ -67,7 +67,7 @@ export default {
     /**
      * Hàm debounce tìm kiếm sau 0.5s không nhập liệu
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     inputOnSearch: debounce(function() {
       this.$emit('onSearch', this.$refs.searchBar.value);

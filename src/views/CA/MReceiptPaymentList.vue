@@ -302,7 +302,7 @@ export default {
     /**
      * Hàm sửa chứng từ
      * @param payment: Chứng từ
-     * @author Xuân Đào (12/05/2023)
+     * @author pvdat (12/05/2023)
      */
     modifyPayment(payment){
       this.showNewPopup(PaymentFormMode.modify, payment)
@@ -311,7 +311,7 @@ export default {
     /**
      * Hàm xóa hàng loạt chứng từ
      * @param payment: Chứng từ
-     * @author Xuân Đào (12/05/2023)
+     * @author pvdat (12/05/2023)
      */
     multipleDelete(){
       this.deleteMode = DeleteMode.multipleDelete;
@@ -322,7 +322,7 @@ export default {
     /**
      * Hàm cập nhật trạng thái cho button xóa nhiều
      * @param payment: Chứng từ
-     * @author Xuân Đào (12/05/2023)
+     * @author pvdat (12/05/2023)
      */
     updateSelected(length){
       if (length > 1) this.enableMultipleEditor = true;
@@ -332,7 +332,7 @@ export default {
     /**
      * Hàm xuất excel chứng từ
      * @param payment: Chứng từ
-     * @author Xuân Đào (12/05/2023)
+     * @author pvdat (12/05/2023)
      */
     async excelExport(){
       this.Loader.showLoader();
@@ -351,7 +351,7 @@ export default {
     /**
      * Hàm tìm kiếm chứng từ
      * @param payment: Chứng từ
-     * @author Xuân Đào (12/05/2023)
+     * @author pvdat (12/05/2023)
      */
     onSearch(keyword){
       this.keyword = keyword;
@@ -364,7 +364,7 @@ export default {
     /**
      * Hàm hiển thị xác nhận xóa chứng từ
      * @param payment: Chứng từ
-     * @author Xuân Đào (11/05/2023)
+     * @author pvdat (11/05/2023)
      */
     showConfirmDelete(payment){
       this.confirmMessage = "Bạn có muốn xóa chứng từ <" + payment['re_ref_no'] + "> đã chọn không?";
@@ -376,7 +376,7 @@ export default {
     /**
      * Hàm xóa chứng từ
      * @param payment: Chứng từ
-     * @author Xuân Đào (11/05/2023)
+     * @author pvdat (11/05/2023)
      */
     async deleteEvent(){
       if (this.deleteMode == DeleteMode.singleDelete){
@@ -410,7 +410,7 @@ export default {
     /**
      * Hàm nhân bản chứng từ
      * @param payment: Chứng từ
-     * @author Xuân Đào (11/05/2023)
+     * @author pvdat (11/05/2023)
      */
     duplicateEvent(payment){
       this.showNewPopup(PaymentFormMode.duplicate, payment)
@@ -419,7 +419,7 @@ export default {
     /**
      * Hàm xem chứng từ
      * @param item: Chứng từ
-     * @author Xuân Đào (11/05/2023)
+     * @author pvdat (11/05/2023)
      */
     watchPayment(item){
       this.showNewPopup(PaymentFormMode.watch, item);
@@ -427,7 +427,7 @@ export default {
 
     /**
      * Hàm cập nhật api detail
-     * @author Xuân Đào (11/05/2023)
+     * @author pvdat (11/05/2023)
      */
     updateAPIDetail(){
       // this.APIString = this.resources.endpoint + `ReceiptPayment/Filter?pageSize=${pageSize}&pageNumber=${pageNum}`;
@@ -437,7 +437,7 @@ export default {
      * Hàm cập nhật api master
      * @param pageSize: Số bản ghi/trang
      * @param pageNum: Trang hiện tại
-     * @author Xuân Đào (11/05/2023)
+     * @author pvdat (11/05/2023)
      */
     updateMasterApi(pageSize, pageNum){
       this.APIString = this.resources.endpoint + `ReceiptPayment/Filter?pageSize=${pageSize}&pageNumber=${pageNum}&keyWord=${this.keyword}`;
@@ -447,7 +447,7 @@ export default {
      * Hàm đi tới màn chi tiết chứng từ
      * @param payment: Chứng từ
      * @param formMode: hành động của form
-     * @author Xuân Đào (10/05/2023)
+     * @author pvdat (10/05/2023)
      */
     async showNewPopup(formMode, payment){
       let id = "";
@@ -463,7 +463,7 @@ export default {
     /**
      * Hàm xử lý dữ liệu khi grid load xong
      * @param servie: Chứng từ
-     * @author Xuân Đào (10/05/2023)
+     * @author pvdat (10/05/2023)
      */
     gridMasterLoaded(service){
         if (this.$refs.gridMaster.gridData[0]) {
@@ -500,7 +500,7 @@ export default {
     /**
      * Hàm đi tới màn chi tiết chứng từ
      * @param payment: Chứng từ
-     * @author Xuân Đào (10/05/2023)
+     * @author pvdat (10/05/2023)
      */
     gridDetailLoaded(service){ 
       if (this.$refs.gridDetail.gridData[0]){
@@ -512,7 +512,7 @@ export default {
 
     /**
      * Hàm thu gọn detail
-     * @author Xuân Đào (10/05/2023)
+     * @author pvdat (10/05/2023)
      */
     collaseDetail(){
         if (!this.collased){
@@ -538,7 +538,7 @@ export default {
 
     /**
      * Hàm cập nhật detail khi chọn master 
-     * @author Xuân Đào (10/05/2023)
+     * @author pvdat (10/05/2023)
      */
     gridItemOnClicked(item){
       this.detailAPI = this.resources.endpoint + 'ReceiptPaymentDetail/GetAllByReId?re_id=' + item['re_id'];
@@ -546,7 +546,7 @@ export default {
 
     /**
      * Hàm định dạng tiền
-     * @author Xuân Đào (09/05/2023)
+     * @author pvdat (09/05/2023)
      */
     formatMoney(amount, decimalCount = 0, decimal = "", thousands = ".") {
       decimalCount = Math.abs(decimalCount);

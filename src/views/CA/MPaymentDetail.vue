@@ -452,7 +452,7 @@ export default {
   computed: {
     /**
      * Tính tổng tiền dưới detail
-     * @author Xuân Đào (09/05/2023)
+     * @author pvdat (09/05/2023)
      */
     summary_amount() {
       // let sum = 0;
@@ -642,7 +642,7 @@ export default {
 
     /**
      * Hành động của button option khi được chọn
-     * @author Xuân Đào (09/05/2023)
+     * @author pvdat (09/05/2023)
      */
     optionalButtonClicked(){
       const btnMode = sessionStorage.BtnOption;
@@ -655,7 +655,7 @@ export default {
 
     /**
      * Cho phép sửa form
-     * @author Xuân Đào (09/05/2023)
+     * @author pvdat (09/05/2023)
      */
     enableEditor(){
       let inputEl = document
@@ -672,7 +672,7 @@ export default {
 
     /**
      * Disable các input không cho phép sửa
-     * @author Xuân Đào (09/05/2023)
+     * @author pvdat (09/05/2023)
      */
     disableEditor(){
       let inputEl = document
@@ -689,7 +689,7 @@ export default {
 
     /**
      * Gửi yêu cầu sửa
-     * @author Xuân Đào (09/05/2023)
+     * @author pvdat (09/05/2023)
      */
     editRequest(){
       this.formMode = PaymentFormMode.modify;
@@ -699,7 +699,7 @@ export default {
 
     /**
      * Hàm lưu và thêm mới dữ liệu
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     saveAndAdd(){
       sessionStorage.BtnOption = BtnOption.saveAndAdd;
@@ -710,7 +710,7 @@ export default {
 
     /**
      * Hàm lưu và đóng form
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     saveAndClose(){
       sessionStorage.BtnOption = BtnOption.saveAndClose;
@@ -721,7 +721,7 @@ export default {
 
     /**
      * Hàm lấy số chứng từ mới
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     async getNewRefNo(){
       const res = await fetch(
@@ -734,7 +734,7 @@ export default {
 
     /**
      * Hàm lấy chứng từ qua id
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     async getPaymentById(id) {
       
@@ -757,7 +757,7 @@ export default {
 
     /**
      * Hàm cập nhật dữ liệu mô tả dưới detail khi edit trên master
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     desMasterInput(input, oldVal) {
       this.gridData.forEach((el) => {
@@ -768,7 +768,7 @@ export default {
 
     /**
      * Hàm cập nhật ngày tháng theo phụ thuộc
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     updateReDate(newValue) {
       if (this.currentPayment["re_date"] == this.currentCaDate) {
@@ -781,7 +781,7 @@ export default {
 
     /**
      * Hàm cập nhật ngày chứng từ
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     updateCaDate(newValue) {
       this.currentPayment["ca_date"] = newValue;
@@ -795,7 +795,7 @@ export default {
 
     /**
      * Hàm định dạng dữ liệu ngày tháng
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     dateFormator(data) {
       const dateData = new Date(data);
@@ -811,7 +811,7 @@ export default {
 
     /**
      * Hàm cập nhật dữ liệu nhân viên được chọn
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     updateSelectedEmployee(employee) {
       this.selectedEmployee = employee;
@@ -819,7 +819,7 @@ export default {
 
     /**
      * Hàm lấy dữ liệu dưới detail
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     async getDetailData(id) {
       let apiString =
@@ -855,7 +855,7 @@ export default {
 
     /**
      * Hàm focus nhập liệu bị lỗi khi đóng cảnh báo
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     dialogClosed() {
       if (this.currentElErr) {
@@ -876,7 +876,7 @@ export default {
      * Hàm tính tổng tiền dưới detail
      * @param data: Dữ liệu tiền được cập nhật
      * @param dataIndex: Chỉ số của data
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     updateSumary() {
       this.summary = 0;
@@ -888,7 +888,7 @@ export default {
 
     /**
      * Hàm thực hiện validate dữ liệu
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     validate() {
       if (this.currentPayment["re_date"] < this.currentPayment["ca_date"]) {
@@ -929,7 +929,7 @@ export default {
     /**
      * Hàm định dạng dữ liệu ngày tháng thành dạng dd/mm/yyyy
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
      formatDate(date) {
       const dateData = new Date(date);
@@ -945,7 +945,7 @@ export default {
 
     /**
      * Hàm lấy dữ liệu chứng từ trong input
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     getPaymentData() {
       if (this.currentPayment['re_attach'])
@@ -977,7 +977,7 @@ export default {
     /**
      * Hàm lưu chứng từ
      * @param action: Hành động sau khi lưu
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     async savePayment(action) {
       if (this.formMode == PaymentFormMode.create || this.formMode == PaymentFormMode.duplicate){
@@ -1162,7 +1162,7 @@ export default {
 
     /**
      * Hàm gửi yêu cầu lưu chứng từ
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     saveRequest(action) {
       if (this.validate()) {
@@ -1187,7 +1187,7 @@ export default {
 
     /**
      * Hàm cập nhật dữ liệu dưới detail khi thay đổi
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     updateEditValue(data, dataIndex, modelIndex) {
       if (this.$refs.editableGrid.selected_index != null){
@@ -1202,7 +1202,7 @@ export default {
 
     /**
      * Hàm cập nhật dữ liệu khi dữ liệu combobox bị thay đổi
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     comboboxDataChange(index, data) {
       if (index == 2 || index == 3) {
@@ -1224,7 +1224,7 @@ export default {
 
     /**
      * Hàm xử lý sự kiện bàn phím
-     * @author Xuân Đào (08/05/2023)
+     * @author pvdat (08/05/2023)
      */
     handleOnKeydown() {
       if (event.key == "Tab") {
@@ -1293,7 +1293,7 @@ export default {
 
     /**
      * Hàm cập nhật khi đối tượng thay đổi
-     * @author Xuân Đào (07/05/2023)
+     * @author pvdat (07/05/2023)
      */
     updateSelectedObject(object) {
       if (object) {
@@ -1322,7 +1322,7 @@ export default {
 
      /**
      * Hàm cập nhật khi lý do chi thay đổi
-     * @author Xuân Đào (07/05/2023)
+     * @author pvdat (07/05/2023)
      */
     updateReason(index) {
       if (index == 6) {
@@ -1337,7 +1337,7 @@ export default {
      * @param amount: tổng tiền
      * @param decimalCount: Số sau dấu phẩy mặc định 0
      * @param thousands: Ngăn cách hàng nghìn
-     * @author Xuân Đào (07/05/2023)
+     * @author pvdat (07/05/2023)
      */
     formatMoney(amount, decimalCount = 0, decimal = "", thousands = ".") {
       decimalCount = Math.abs(decimalCount);
@@ -1362,7 +1362,7 @@ export default {
 
      /**
      * Hàm quay lại trang trước đó
-     * @author Xuân Đào (07/05/2023)
+     * @author pvdat (07/05/2023)
      */
     closeOnClick() {
       if (JSON.stringify(this.currentPayment) == JSON.stringify(this.beforePayment) && this.compareArrays(this.gridData, this.beforeDetail))
@@ -1374,7 +1374,7 @@ export default {
 
      /**
      * Hàm thêm hàng mới dưới detail
-     * @author Xuân Đào (07/05/2023)
+     * @author pvdat (07/05/2023)
      */
     addRow() {
       let newData = null;
@@ -1398,7 +1398,7 @@ export default {
 
      /**
      * Hàm xóa hết dữ liệu dưới detail
-     * @author Xuân Đào (07/05/2023)
+     * @author pvdat (07/05/2023)
      */
     removeAll() {
       this.gridKey++;
@@ -1426,7 +1426,7 @@ export default {
      /**
      * Hàm xóa dữ liệu dưới detail theo từng dòng
      * @param index: chỉ số của dữ liệu cần xóa
-     * @author Xuân Đào (07/05/2023)
+     * @author pvdat (07/05/2023)
      */
     deleteOnClick(index) {
       if (this.gridData.length >= 2) {
@@ -1441,7 +1441,7 @@ export default {
      * Hàm xóa 1 item khỏi array
      * @param proxy: proxy cần xóa
      * @param index: vị trí bị xóa
-     * @author Xuân Đào (07/05/2023)
+     * @author pvdat (07/05/2023)
      */
     removeItemFromArr(proxy, index) {
       let arr = [];

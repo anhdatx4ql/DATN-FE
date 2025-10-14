@@ -1,5 +1,5 @@
 // Component hiển thị phần header dùng chung của website
-// Author: Xuân Đào (05/03/2023)
+// Author: pvdat (05/03/2023)
 <template>
   <div class="header">
     <!-- Phần hiển thị option button và nội dung của header -->

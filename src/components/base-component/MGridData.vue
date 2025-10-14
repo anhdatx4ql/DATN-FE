@@ -1,6 +1,6 @@
 // component dùng để hiển thị data dưới dạng grid với dữ liệu được truyền vào thông qua api
 // Props: data bao gồm dữ liệu về tên các cột cần có, modelName tương ứng với các cột, loại cột, độ rộng cột.
-// @author  Xuân Đào (12/03/2023)
+// @author  pvdat (12/03/2023)
 <template>
   <div class="grid-viewer" ref="gridViewer" @click="getClickedPosition">
     <div class="grid-viewer__scroll">
@@ -192,7 +192,7 @@ export default {
   /**
    * Lấy dữ liệu từ api và đổ vào data
    *
-   * @author  Xuân Đào(12/03/2023)
+   * @author  pvdat(12/03/2023)
    */
   created() {
     this.getApiData();
@@ -202,7 +202,7 @@ export default {
   /**
    * Định dạng dữ liệu tiêu đề
    *
-   * @author  Xuân Đào(12/03/2023)
+   * @author  pvdat(12/03/2023)
    */
   mounted() {
     let totalWidth = 0;
@@ -266,7 +266,7 @@ export default {
 
     /**
      * Hàm emit sửa dữ liệu
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     ModifyEvent(){
       this.$emit("dbClicked", this.selectedData);
@@ -281,7 +281,7 @@ export default {
 
     /**
      * Hàm emit xóa dữ liệu
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     DeleteEvent(){
       this.$emit("deleteEvent", this.selectedData);
@@ -289,7 +289,7 @@ export default {
 
     /**
      * Hàm emit nhân bản dữ liệu
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     DuplicateEvent(){
       this.$emit("duplicateEvent", this.selectedData);
@@ -297,7 +297,7 @@ export default {
 
     /**
      * Hàm khởi tạo cho phép thay đổi vị trí cột hiển thị
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     initSortable(){
       let ths = this.$refs.tableThead.children[0];
@@ -319,7 +319,7 @@ export default {
      * @param amount: Số tiền
      * @param decimalCount: Số lượng số sau dấu phẩy
      * @param thousands: Ngăn cách hàng nghìn
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     formatMoney(amount, decimalCount = 0, decimal = "", thousands = ".") {
       decimalCount = Math.abs(decimalCount);
@@ -332,7 +332,7 @@ export default {
 
     /**
      * Hàm lấy dữ liệu từ api
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     async getApiData(){
     if(this.api){
@@ -374,7 +374,7 @@ export default {
 
     /**
      * Hàm emit load xong dữ liệu
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
     gridOnLoaded(){
       this.$emit("loadCompleted", this.serviceResult);
@@ -388,7 +388,7 @@ export default {
     /**
      * Hàm xử lý checkbox gridData
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
 
     handleCheckboxOnLoad(data){
@@ -410,7 +410,7 @@ export default {
     /**
      * Hàm kiểm tra item có tồn tại trong array
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
     isExitsItemInArray(arr, item){
       for (let i=0;i<arr.length;i++){
@@ -422,7 +422,7 @@ export default {
     /**
      * Hàm nhân bản dữ liệu 
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
     duplicateData(){
       this.$emit("duplicateData", this.selectedData);
@@ -431,7 +431,7 @@ export default {
     /**
      * Hàm xử lý ô checkbox cha
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
     parentCheckBoxOnClick(){
       let data = this.$refs.tableBody.children;
@@ -464,7 +464,7 @@ export default {
     /**
      * Hàm xóa các hàng được chọn
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
     deleteSelectedMultipleRow(){
       this.selectedMultipleRow.forEach(el => {
@@ -477,7 +477,7 @@ export default {
     /**
      * Hàm xóa 1 hàng
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
     deleteSelectedRow(){
       this.selected.remove();
@@ -486,7 +486,7 @@ export default {
     /**
      * Hàm click checkbox
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
     checkBoxOnClick(item) {
       let targetEl = event.target.parentElement.parentElement
@@ -505,7 +505,7 @@ export default {
     /**
      * Hàm xóa 1 item khỏi array
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
     removeItemFromArr(proxy, index) {
       let arr = [];
@@ -520,7 +520,7 @@ export default {
     /**
      * Hàm lấy giới tính theo mã
      * @param {mã giới tính} genderCode
-     * @author Xuân Đào (20/03/2023)
+     * @author pvdat (20/03/2023)
      */
 
     getGenderName(genderCode) {
@@ -539,7 +539,7 @@ export default {
     /**
      * Ẩn context menu
      *
-     * @author Xuân Đào (20/03/2023)
+     * @author pvdat (20/03/2023)
      */
 
     editOnBlur() {
@@ -552,7 +552,7 @@ export default {
     /**
      * Set vị trí hiển thị cho con text menu
      *
-     * @author Xuân Đào (20/03/2023)
+     * @author pvdat (20/03/2023)
      */
 
     editOnClick(item) {
@@ -569,7 +569,7 @@ export default {
     /**
      * Xử lý sự kiện click vào các hàng trong table
      *
-     * @author  Xuân Đào (14/03/2023x)
+     * @author  pvdat (14/03/2023x)
      */
     itemOnClick(item, index) {
       if (event.target.classList[0] == 'edit-text') return;
@@ -586,7 +586,7 @@ export default {
     /**
      * Hàm định dạng dữ liệu ngày tháng
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     dateFormator(date) {
       const dateData = new Date(date);
@@ -603,7 +603,7 @@ export default {
     /**
      * Hàm hiển thị contextmenu
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     showContextMenu() {
       this.showContext = true;
@@ -612,7 +612,7 @@ export default {
     /**
      * Hàm ẩn contextmenu
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     hideContextMenu() {
       this.showContext = false;
@@ -621,7 +621,7 @@ export default {
     /**
      * Hàm lấy dữ liệu vị trí click chuột
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     getClickedPosition(event) {
       this.cursor_y = event.clientY;
@@ -630,7 +630,7 @@ export default {
     /**
      * Hàm ẩn animation loading khi load xong dữ liệu
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     hideLoadingSkeleton() {
       this.showLoading = false;
@@ -639,7 +639,7 @@ export default {
     /**
      * Hàm làm mới dữ liệu
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     async refreshData(api) {
       try {
@@ -662,7 +662,7 @@ export default {
     /**
      * Hàm hiển thị form sửa khi nhấn double click
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     editOnDbClick(item) {
       this.$emit("dbClicked", item);
@@ -671,7 +671,7 @@ export default {
     /**
      * Hàm xóa một bản ghi
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     deleteRowData() {
       this.$emit("deleteRc", this.selectedData, deleteType.singleDelete);
@@ -680,7 +680,7 @@ export default {
     /**
      * Hàm kiểm tra số hàng còn lại trong grid
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     getRemainingRow(){
       return this.$refs.tableBody.children.length;

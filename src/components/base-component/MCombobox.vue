@@ -1,5 +1,5 @@
 // Component tạo ra một autocomplete combobox từ api
-// Author: Xuân Đào(05/03/2023)
+// Author: pvdat(05/03/2023)
 <template>
   <div class="m-combobox">
     <div class="m-txt">
@@ -83,7 +83,7 @@ export default {
     /**
      * Set focus vào input
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
     setFocus(){
       this.$refs.inpValue.focus();
@@ -91,7 +91,7 @@ export default {
     /**
      * Hàm hiển thị các item khi focus vào input
      *
-     * Author: Xuân Đào(05/03/2023)
+     * Author: pvdat(05/03/2023)
      */
     onFocus() {
       this.isShow = true;
@@ -103,7 +103,7 @@ export default {
     /**
      * Hàm ẩn các item khi focus out khỏi các input
      *
-     * Author: Xuân Đào(05/03/2023)
+     * Author: pvdat(05/03/2023)
      */
     onBlur() {
       setTimeout(() => {
@@ -116,7 +116,7 @@ export default {
     /**
      * Hàm lấy dữ liệu được chọn
      * 
-     * Author: Xuân Đào (07/03/2023)
+     * Author: pvdat (07/03/2023)
      */
     getValue(){
       return this.$refs.inpValue.value;
@@ -124,7 +124,7 @@ export default {
     /**
      * Hàm set focus vào input khi nhấn vào button
      *
-     * Author: Xuân Đào(05/03/2023)
+     * Author: pvdat(05/03/2023)
      */
     btnClick() {
       this.$refs.inpValue.focus();
@@ -133,7 +133,7 @@ export default {
     /**
      * Hàm handle sự kiện bàn phím khi focus vào combobox
      *
-     * Author: Xuân Đào(05/03/2023)
+     * Author: pvdat(05/03/2023)
      */
     handleEvent(event) {
       if (event.keyCode == 40) {
@@ -165,7 +165,7 @@ export default {
     /**
      * Hàm cập nhật lại item đang được chọn
      *
-     * Author: Xuân Đào(05/03/2023)
+     * Author: pvdat(05/03/2023)
      */
     updateItem() {
       for (const item of this.$refs.itemList.children) {
@@ -183,7 +183,7 @@ export default {
     /**
      * Hàm xử lý sự kiện chuột khi thao tác với combobox
      *
-     * Author: Xuân Đào(05/03/2023)
+     * Author: pvdat(05/03/2023)
      */
     itemOnClick(event) {
       this.$refs.inpValue.value = event.target.textContent;
@@ -202,7 +202,7 @@ export default {
     /**
      * Hàm validate không để trống combobox
      *
-     * Author: Xuân Đào (05/03/2023)
+     * Author: pvdat (05/03/2023)
      */
     validate() {
     let checkVal = false;
@@ -274,7 +274,7 @@ export default {
     /**
      * Lấy id record được chọn trong combobox
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
     getSelectedId(modelValue){
       if (!this.selectedIndex){
@@ -291,7 +291,7 @@ export default {
     /**
      * Lấy tên combobox
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */    
     getInputName(){
       return this.title;

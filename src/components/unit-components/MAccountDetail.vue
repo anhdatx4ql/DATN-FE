@@ -417,7 +417,7 @@ export default {
 
     /**
      * Hàm xử lý sự kiện bàn phím
-     * @author Xuân Đào (04/05/2023)
+     * @author pvdat (04/05/2023)
      */
     handleOnKeydown(){
       if (event.key == 'Tab'){
@@ -460,7 +460,7 @@ export default {
 
     /**
      * Hàm hiển thị tính năng đang phát triển
-     * @author Xuân Đào (04/05/2023)
+     * @author pvdat (04/05/2023)
      */
     showDeveloping(){
       this.$refs.singleDialog.showDialogOn(dialogType.info, resources.vi.dialogMessage.developing, resources.vi.btnAction.close)
@@ -468,7 +468,7 @@ export default {
 
     /**
      * Hàm cập nhật dữ liệu tính chất
-     * @author Xuân Đào (04/05/2023)
+     * @author pvdat (04/05/2023)
      */
     updateProperty(value){
       this.currentAccount['propertyname'] = value;
@@ -476,7 +476,7 @@ export default {
 
     /**
      * Hàm cập nhật dữ liệu tài khoản tổng hợp
-     * @author Xuân Đào (04/05/2023)
+     * @author pvdat (04/05/2023)
      */
     updateDependency(value){
       this.currentAccount['dependency'] = value;
@@ -484,7 +484,7 @@ export default {
 
     /**
      * Hàm yêu cầu lưu dữ liệu
-     * @author Xuân Đào (04/05/2023)
+     * @author pvdat (04/05/2023)
      */
     saveData(){
       this.showConfirmChange = false;
@@ -493,7 +493,7 @@ export default {
 
     /**
      * Hàm hủy bỏ những thay đổi
-     * @author Xuân Đào (04/05/2023)
+     * @author pvdat (04/05/2023)
      */
     undoData(){
       this.showConfirmChange = false;
@@ -502,7 +502,7 @@ export default {
 
     /**
      * Hàm đóng form
-     * @author Xuân Đào (04/05/2023)
+     * @author pvdat (04/05/2023)
      */
     closeDetail() {
       if (JSON.stringify(this.beforeAccount) != JSON.stringify(this.currentAccount)) {
@@ -514,7 +514,7 @@ export default {
 
     /**
      * Hàm mở rộng form
-     * @author Xuân Đào (04/05/2023)
+     * @author pvdat (04/05/2023)
      */
     expandOnClick() {
       if (!this.isExpanded) {
@@ -532,7 +532,7 @@ export default {
 
     /**
      * Hàm thu gọn form
-     * @author Xuân Đào (04/05/2023)
+     * @author pvdat (04/05/2023)
      */
     collaseOnClick() {
       if (!this.collase) {
@@ -552,7 +552,7 @@ export default {
 
     /**
      * Hàm xử lý validate dữ liệu
-     * @author Xuân Đào (04/05/2023)
+     * @author pvdat (04/05/2023)
      */
     validate() {
       this.currentError = null;
@@ -571,7 +571,7 @@ export default {
 
     /**
      * Hàm lưu dữ liệu
-     * @author Xuân Đào (04/05/2023)
+     * @author pvdat (04/05/2023)
      */
     async saveOnClick(reload) {
       if(this.validate()){
@@ -614,7 +614,7 @@ export default {
     /**
      * Hàm lấy danh sách tài khoản con theo index
      * @param index: Chỉ số tài khoản cha
-     * @authod Xuân Đào (25/04/2023)
+     * @authod pvdat (25/04/2023)
      */
     GetChildList(index){
       let list = [];
@@ -628,7 +628,7 @@ export default {
 
     /**
      * Hàm focus nhập liệu lỗi khi đóng dialog
-     * @author Xuân Đào (04/05/2023)
+     * @author pvdat (04/05/2023)
      */
     dialogClosed() {
       if (this.currentError)
@@ -638,7 +638,7 @@ export default {
     /**
      * Hàm xóa 1 item khỏi array
      *
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
      removeItemFromArr(proxy, index) {
       let arr = [];
@@ -659,7 +659,7 @@ export default {
 
     /**
      * Hàm lấy dữ liệu input
-     * @author Xuân Đào (04/05/2023)
+     * @author pvdat (04/05/2023)
      */
     getInputData() {
       let dataLevel = 0;
@@ -702,7 +702,7 @@ export default {
 
     /**
      * Hàm lưu dữ liệu
-     * @author Xuân Đào (04/05/2023)
+     * @author pvdat (04/05/2023)
      */
     async saveAccount(account){
       try {

@@ -63,7 +63,7 @@ export default {
 
         /**
          * Hàm cập nhật trạng thái khi click checkbox
-         * @author Xuân Đào(13/05/2023)
+         * @author pvdat(13/05/2023)
          */
         checkboxOnClick(){
             if (this.$refs.checkbox.classList[1] == "checked"){
@@ -77,7 +77,7 @@ export default {
 
         /**
          * Hàm cập nhật trạng thái khi focus checkbox
-         * @author Xuân Đào(13/05/2023)
+         * @author pvdat(13/05/2023)
          */
         onFocus(){
             this.isFocus = true;
@@ -86,7 +86,7 @@ export default {
 
         /**
          * Hàm cập nhật trạng thái khi blur checkbox
-         * @author Xuân Đào(13/05/2023)
+         * @author pvdat(13/05/2023)
          */
         onBlur(){
             this.isFocus = false;
@@ -95,7 +95,7 @@ export default {
 
         /**
          * Hàm xử lý sự kiện bàn phím cho checkbox
-         * @author Xuân Đào(13/05/2023)
+         * @author pvdat(13/05/2023)
          */
         hanldeOnKeydown(){
             if(event.key == "Enter"){
@@ -106,7 +106,7 @@ export default {
 
         /**
          * Hàm set focus vào checkbox
-         * @author Xuân Đào(13/05/2023)
+         * @author pvdat(13/05/2023)
          */
         setFocus(){
             this.$refs.checkbox.focus();

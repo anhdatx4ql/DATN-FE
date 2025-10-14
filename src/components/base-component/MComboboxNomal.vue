@@ -130,7 +130,7 @@ export default {
     /**
      * Set blur ra khỏi combobox 
      * 
-     * @author Xuân Đào (14/05/2023)
+     * @author pvdat (14/05/2023)
      * */
     setBlur(){
       this.$refs.focusable.classList.remove('focused');
@@ -139,7 +139,7 @@ export default {
      /**
      * Set focus vào combobox 
      * 
-     * @author Xuân Đào (14/05/2023)
+     * @author pvdat (14/05/2023)
      * */
     setFocus(){
       this.$refs.focusable.classList.add('focused');
@@ -149,7 +149,7 @@ export default {
     /**
      * Xự kiện click vào item trong combobox
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
     itemOnClick(index) {
       this.selected = index;
@@ -160,7 +160,7 @@ export default {
     /**
      * Xự kiện focus vào input trong combobox
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
     comboboxOnFocus() {
       if(this.isEnable)
@@ -170,7 +170,7 @@ export default {
     /**
      * Xự kiện unfocus khỏi input trong combobox
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
     comboboxOnBlur() {
       this.showData = false;
@@ -179,7 +179,7 @@ export default {
     /**
      * Xự kiện bàn phím trong combobox
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
     comboboxOnKeyDown() {
       if (event.key == "ArrowUp") {
@@ -202,7 +202,7 @@ export default {
     /**
      * Xự kiện chuột trong combobox
      * 
-     * @author Xuân Đào (04/04/2023)
+     * @author pvdat (04/04/2023)
      */
     iconOnClick(){
       if(this.enable){

@@ -1,5 +1,5 @@
 // Component tạo ra một input tự validate
-// Author: Xuân Đào(05/03/2023)
+// Author: pvdat(05/03/2023)
 <template>
   <div class="inf-component com1">
     <div class="text-area">
@@ -132,7 +132,7 @@ export default {
     /**
      * Hàm set focus vào input
      * 
-     * @author Xuân Đào (05/03/2023)
+     * @author pvdat (05/03/2023)
      */
     onKeyUp(){
       if (this.type && this.type == 'd-money'){
@@ -142,7 +142,7 @@ export default {
 
     /**
      * Hàm định dạng tiền
-     * @author Xuân Đào(13/05/2023)
+     * @author pvdat(13/05/2023)
      */
      formatMoney(amount, decimalCount = 0, decimal = ",", thousands = ".") {
       decimalCount = Math.abs(decimalCount);
@@ -168,7 +168,7 @@ export default {
     /**
      * Hàm set focus vào input
      * 
-     * Author: Xuân Đào (05/03/2023)
+     * Author: pvdat (05/03/2023)
      */
     setFocus() {
       this.$refs.mInput.focus();
@@ -221,7 +221,7 @@ export default {
     /**
      * Hàm lấy tên input
      *
-     * @author  Xuân Đào (12/03/2023)
+     * @author  pvdat (12/03/2023)
      */
     getInputName(){
       return this.inputTitle;
