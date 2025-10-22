@@ -83,7 +83,7 @@
               {
                 title: 'Cấp phát cho',
                 tooltip: 'Cấp phát cho',
-                dataField: 'employeeid',
+                dataField: 'employeename',
                 dataType: 'text',
                 colWidth: '200',
               },

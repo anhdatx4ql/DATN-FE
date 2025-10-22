@@ -45,7 +45,7 @@ export default {
 
     methods:{
         getDefault(){
-            fetch(this.res.endpoint + `Employees/Filter?pageSize=20&pageNumber=${this.employeePage}`).then((res) => res.json()).then((data) => this.employeePage = data);
+            fetch(this.res.endpoint + `Employees/EmployeeUseAsset?pageSize=20&pageNumber=${this.employeePage}`).then((res) => res.json()).then((data) => this.employeePage = data);
         },
     },
 

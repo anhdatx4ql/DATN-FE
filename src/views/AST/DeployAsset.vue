@@ -125,7 +125,7 @@
     },
     created() {
       this.APIString =
-        `${this.res.endpoint}Employees/Filter?pageSize=20&pageNumber=1&keyWord=`;
+        `${this.res.endpoint}Employees/EmployeeUseAsset?pageSize=20&pageNumber=1&keyWord=`;
       window.addEventListener("keydown", this.handleKeyDown);
       this.getStaticData();
       this.getAllAsset();

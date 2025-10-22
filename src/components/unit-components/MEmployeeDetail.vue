@@ -62,12 +62,12 @@
             <div class="inf-area">
               <div class="inf-component unit">
                 <MCombobox
-                  ref="inpDepartment"
-                  title="Đơn vị"
-                  :isRequired="true"
+                  title="Phòng ban"
                   :api="this.res.endpoint + 'Department'"
-                  v-model="employee.DepartmentName"
-                  modelName="DepartmentName"
+                  modelName="departmentname" 
+                  v-model="employee.DepartmentId"
+                  :isRequired="true"
+                  ref="'inpDepartment"
                 />
               </div>
             </div>
@@ -624,23 +624,25 @@ export default {
      */
     getInputData(){
       try{
+        let me = this;
         const employee = {
-            EmployeeId: this.employee.EmployeeId,
-            EmployeeCode: this.$refs.inpEmployeeCode.value,
-            FullName: this.$refs.inpEmployeeFullName.value,
-            DepartmentId: this.$refs.inpDepartment.getSelectedId("DepartmentId"),
-            PositionId: "35e773ea-5d44-2dda-26a8-6d513e380bde",
-            Gender: this.getGenderCode(this.$refs.inpGender.value),
-            DateOfBirth: this.$refs.inpDateOfBirth.value ? (this.$refs.inpDateOfBirth.value) : null,
-            PhoneNumer: this.$refs.inpPhonenumber.value,
-            Email: this.$refs.inpEmail.value,
-            Address: this.$refs.inpAddress.value,
-            IdentityNumber: this.$refs.identityNumber.value,
-            IdentityDate: this.$refs.identityDate.value ? (this.$refs.identityDate.value) : null,
-            IdentityPlace: this.$refs.identityPlace.value,
-            BankAccount: this.$refs.inpBankAccount.value,
-            BankName: this.$refs.inpBankName.value,
-            BankBranch: this.$refs.inpBankBranch.value,
+            EmployeeId: me.employee.EmployeeId, 
+            EmployeeCode: (me.employee && me.employee.EmployeeCode) ? me.employee.EmployeeCode : null, // mã nhân viên
+            FullName: (me.employee && me.employee.FullName) ? me.employee.FullName : null, // Tên nhân viên
+            DepartmentName: (me.employee && me.employee.DepartmentId) ? me.employee.DepartmentId : null, // Phòng ban
+            Gender: this.getGenderCode(this.$refs.inpGender.value), // todo pvdat xử lý lại giới tính 
+            DateOfBirth: (me.employee && me.employee.DateOfBirth) ? me.employee.DateOfBirth : null, // ngày sinh
+            PhoneNumer: (me.employee && me.employee.PhoneNumer) ? me.employee.PhoneNumer : null, // SĐT
+            Email: (me.employee && me.employee.Email) ? me.employee.Email : null, // EMail
+            Address: (me.employee && me.employee.Address) ? me.employee.Address : null, // Địa chỉ
+            IdentityNumber: (me.employee && me.employee.IdentityNumber) ? me.employee.IdentityNumber : null, // Số CMND
+            IdentityDate: (me.employee && me.employee.IdentityDate) ? me.employee.IdentityDate : null, // ngày cấp
+            IdentityPlace: (me.employee && me.employee.IdentityPlace) ? me.employee.IdentityPlace : null, // nơi cấp
+            BankAccount: (me.employee && me.employee.BankAccount) ? me.employee.BankAccount : null, // Số tài khoản ngân hàng
+            BankName: (me.employee && me.employee.BankName) ? me.employee.BankName : null, // Tên ngân hàng
+            BankBranch: (me.employee && me.employee.BankBranch) ? me.employee.BankBranch : null, // Chi nhánh tk ngân hàng
+            PositionName: (me.employee && me.employee.PositionName) ? me.employee.PositionName : null, // Chức vụ
+            LandingPhone: (me.employee && me.employee.landingPhone) ? me.employee.landingPhone : null, // Điện thoại bàn
           }
           return employee
       } catch (ex) {
