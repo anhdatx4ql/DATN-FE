@@ -63,6 +63,11 @@
               <div class="asset-status status-3" v-if="item[value.dataField] == 2">Đang sửa chữa</div>
               <div class="asset-status status-4" v-if="item[value.dataField] == 3">Đã hư hỏng</div>
             </div>
+            <div v-else-if="value['dataType'] == 'gender'">
+              <div class="" v-if="item[value.dataField] == 0">Nam</div>
+              <div class="" v-if="item[value.dataField] == 1">Nữ</div>
+              <div class="" v-if="item[value.dataField] == 2">Khác</div>
+            </div>
             <div v-else>
               {{ item[value.dataField] }}
             </div>
@@ -284,7 +289,7 @@ export default {
      * @author pvdat(13/05/2023)
      */
     DeleteEvent(){
-      this.$emit("deleteEvent", this.selectedData);
+      this.$emit("deleteEvent", this.selectedData, deleteType.singleDelete);
     },
 
     /**
@@ -895,6 +900,25 @@ table thead tr th{
   text-align: center;
   font-family: Notosans-semibold;
   line-height: 30px;
+}
+
+.gender {
+    height: 36px !important;
+    outline: unset !important;
+    box-sizing: border-box !important;
+    align-items: center !important;
+    -moz-column-gap: 8px !important;
+    column-gap: 8px !important;
+    border-bottom: solid #bfbfbf 1px !important;
+    position: unset !important;
+    border-radius: 0 !important;
+    display: inline-masonry !important;
+}
+th.gender {
+    border-bottom: solid #bfbfbf 1px !important;
+    position: unset !important;
+    border-radius: 0 !important;
+    display: inline-masonry !important;
 }
 
 .status-1{

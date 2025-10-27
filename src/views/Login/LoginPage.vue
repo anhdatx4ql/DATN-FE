@@ -3,7 +3,7 @@
         <div class="overlay">
             <div class="main">
                 <div class="side left-side">
-                    <div class="title" style="font-family: Poppins-semibold; font-size: 20px; position: relative; left: 24px;">Equipment Managerment System - EMS</div>
+                    <div class="title" style="font-family: Poppins-semibold; font-size: 20px; position: relative; left: 24px;">Asset management system</div>
                     <div class="login-group" style="position: relative; left: 60px; top: 60px;">
                         <div class="login-title" @click="showLoader = true" style="font-family: Notosans-semibold; font-size: 30px; position: relative;">Đăng nhập</div>
                         <div class="login-title" style="position: relative; top: 20px;">Nếu chưa có tài khoản</div>
@@ -36,12 +36,12 @@
                         <div class="icon" style="height: 28px; width: 28px;">
                             <img src="@/assets/icons/contact.png">
                         </div>
-                        <div style="font-family: Poppins-semibold; font-size: 18px; color: #fff;">096 124 3937</div>
+                        <div style="font-family: Poppins-semibold; font-size: 18px; color: #fff;">0379 459 937</div>
                     </div>
                     <div class="image" style="height: 400px; width: 400px; margin: 20px auto;"></div>
                     <div class="text" style="position: relative; left: 48px; top: 24px;">
                         <div class="title" style="font-size: 32px; font-family: Notosans-semibold; color: #fff;">Đăng ký tài khoản</div>
-                        <div class="description" style="color: #fff; position: relative; top: 8px;">Hệ thống quản lý thiết bị</div>
+                        <div class="description" style="color: #fff; position: relative; top: 8px;">Hệ thống quản lý tài sản</div>
                     </div>
                 </div>
             </div>

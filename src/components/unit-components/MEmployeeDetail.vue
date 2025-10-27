@@ -48,7 +48,7 @@
                 ref="inpEmployeeCode"
                 :inputTitle="txtData.code"
                 :required="true"
-                v-model="employee.EmployeeCode"
+                v-model="employee.employeecode"
                 :canFocus="true"
               />
               <MInput
@@ -56,7 +56,7 @@
                 class="com2"
                 :inputTitle="txtData.fullName"
                 :required="true"
-                v-model:modelValue="employee.FullName"
+                v-model:modelValue="employee.fullname"
               />
             </div>
             <div class="inf-area">
@@ -65,7 +65,7 @@
                   title="Phòng ban"
                   :api="this.res.endpoint + 'Department'"
                   modelName="departmentname" 
-                  v-model="employee.DepartmentId"
+                  v-model="employee.departmentname"
                   :isRequired="true"
                   ref="'inpDepartment"
                 />
@@ -76,7 +76,7 @@
                 <MInput
                   class="position-name"
                   :inputTitle="txtData.position"
-                  v-model:modelValue="employee.PositionName"
+                  v-model:modelValue="employee.positionname"
                   ref="inpPosition"
                 />
               </div>
@@ -88,7 +88,7 @@
               <div class="inf-component dob" style="width: 170px">
                 <MDatePicker
                   :title="txtData.dob"
-                  v-model="this.employee.DateOfBirth"
+                  v-model="this.employee.dateofbirth"
                   ref="inpDateOfBirth"
                 ></MDatePicker>
               </div>
@@ -97,7 +97,7 @@
                   <MRadioButton
                     :title="txtData.gender"
                     :data="['Nam', 'Nữ', 'Khác']"
-                    v-model="employee.GenderName"
+                    v-model="employee.gendername"
                     ref="inpGender"
                   ></MRadioButton>
                 </div>
@@ -108,7 +108,7 @@
                 <MInput
                   class="position-name"
                   :inputTitle="txtData.identity"
-                  v-model:modelValue="employee.IdentityNumber"
+                  v-model:modelValue="employee.identitynumber"
                   :tooltip="this.res.vi.employeeDetail.identityDetail"
                   ref="identityNumber"
                 />
@@ -116,7 +116,7 @@
               <div class="inf-component issue-date" style="width: 170px">
                 <MDatePicker
                   :title="txtData.dateOfIssue"
-                  v-model="this.employee.IdentityDate"
+                  v-model="this.employee.identitydate"
                   ref="identityDate"
                 ></MDatePicker>
               </div>
@@ -125,7 +125,7 @@
               <MInput
                 class="position-name"
                 :inputTitle="txtData.issuedBy"
-                v-model="this.employee.IdentityPlace"
+                v-model="this.employee.identityplace"
                 ref="identityPlace"
               />
             </div>
@@ -135,30 +135,30 @@
         <div class="contact-info">
           <div class="inf-area">
             <div class="inf-component">
-              <MInput :inputTitle="txtData.address" ref="inpAddress" v-model="employee.Address" />
+              <MInput :inputTitle="txtData.address" ref="inpAddress" v-model="employee.address" />
             </div>
           </div>
           <div class="inf-area">
             <div class="inf-component">
-              <MInput :inputTitle="txtData.phoneNumber" ref="inpPhonenumber" :tooltip="this.res.vi.employeeDetail.phoneNumberDetail" v-model="this.employee.PhoneNumer"/>
+              <MInput :inputTitle="txtData.phoneNumber" ref="inpPhonenumber" :tooltip="this.res.vi.employeeDetail.phoneNumberDetail" v-model="this.employee.phonenumber"/>
             </div>
             <div class="inf-component">
-              <MInput :inputTitle="txtData.landingPhone" ref="inpLandingPhone" :tooltip="this.res.vi.employeeDetail.landingPhoneDetail" v-model="this.employee.landingPhone"/>
+              <MInput :inputTitle="txtData.landingPhone" ref="inpLandingPhone" :tooltip="this.res.vi.employeeDetail.landingPhoneDetail" v-model="this.employee.landingphone"/>
             </div>
             <div class="inf-component">
-              <MInput inputTitle="Email" ref="inpEmail" v-model="this.employee.Email"/>
+              <MInput inputTitle="Email" ref="inpEmail" v-model="this.employee.email"/>
             </div>
           </div>
           <div class="inf-area">
             <div class="inf-component">
-              <MInput :inputTitle="txtData.bankAccount" ref="inpBankAccount" v-model="this.employee.BankAccount"/>
+              <MInput :inputTitle="txtData.bankAccount" ref="inpBankAccount" v-model="this.employee.bankaccount"/>
             </div>
             <div class="inf-component">
               <MInput
                 class="position-name"
                 :inputTitle="txtData.bankName"
                 ref="inpBankName"
-                v-model="this.employee.BankName"
+                v-model="this.employee.bankname"
               />
             </div>
             <div class="inf-component">
@@ -167,7 +167,7 @@
                 :inputTitle="txtData.bankBranch"
                 ref="inpBankBranch"
                 :tooltip="this.res.vi.employeeDetail.bankBranchDetail"
-                v-model="this.employee.BankBranch"
+                v-model="this.employee.bankbranch"
               />
             </div>
           </div>
@@ -288,10 +288,17 @@ export default {
 
   beforeMount() {
     if (this.actions == formAction.updateRecord) {
-      this.employee.DateOfBirth = this.readableDateFormater(this.employee.DateOfBirth);
-      this.employee.IdentityDate = this.readableDateFormater(this.employee.IdentityDate);
-      if (this.employee.GenderName === "Không xác định")
-        this.employee.GenderName = "Khác";
+      // xử lý ngày tháng hiển thị lên đúng định dạng
+      this.employee.dateofbirth = this.readableDateFormater(this.employee.dateofbirth);
+      this.employee.identitydate = this.readableDateFormater(this.employee.identitydate);
+
+      if(this.employee.gender == 0) {
+        this.employee.gendername = "Nam";
+      }else if (this.employee.gender == 1) {
+        this.employee.gendername = "Nữ";
+      } else {
+        this.employee.gendername = "Khác";
+      }
     }
     this.CURRENT_DATA = Object.assign({}, this.employee);
   },
@@ -309,15 +316,30 @@ export default {
      *
      * Author: pvdat (03/03/2023)
      */
-     readableDateFormater(data) {
-      const date = new Date(data);
-      const dateVal =
-        date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
-      const month =
-        date.getMonth() < 10
-          ? "0" + (date.getMonth() + 1)
-          : date.getMonth() + 1;
+     readableDateFormater(dateStr) {
+      if (!dateStr) return "";
+
+      let date;
+
+      // 🟢 Nếu chuỗi là dạng "dd/MM/yyyy"
+      if (dateStr.includes("/")) {
+        const parts = dateStr.split("/");
+        if (parts.length === 3) {
+          const [day, month, year] = parts.map(Number);
+          date = new Date(year, month - 1, day);
+        }
+      } 
+      // 🟢 Nếu chuỗi là dạng ISO "yyyy-MM-ddTHH:mm:ss"
+      else {
+        date = new Date(dateStr);
+      }
+
+      if (isNaN(date)) return "Invalid Date";
+
       const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const dateVal = String(date.getDate()).padStart(2, "0");
+
       return `${year}-${month}-${dateVal}`;
     },
 
@@ -454,9 +476,9 @@ export default {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(newEmployee),
         };
-        newEmployee.DateOfBirth = this.formatDate(newEmployee.DateOfBirth);
-        newEmployee.IdentityDate = this.formatDate(newEmployee.IdentityDate)
-        let res = await fetch(`${this.res.endpoint}Employees?id=${newEmployee.EmployeeId}`, options);
+        newEmployee.dateofbirth = this.formatDate(newEmployee.dateofbirth);
+        newEmployee.identitydate = this.formatDate(newEmployee.identitydate);
+        let res = await fetch(`${this.res.endpoint}Employees?id=${newEmployee.employeeid}`, options);
         let data = await res.json();
         return { status: res.status, value: data, message: data['Message'] };
       } catch (err) {
@@ -626,23 +648,23 @@ export default {
       try{
         let me = this;
         const employee = {
-            EmployeeId: me.employee.EmployeeId, 
-            EmployeeCode: (me.employee && me.employee.EmployeeCode) ? me.employee.EmployeeCode : null, // mã nhân viên
-            FullName: (me.employee && me.employee.FullName) ? me.employee.FullName : null, // Tên nhân viên
-            DepartmentName: (me.employee && me.employee.DepartmentId) ? me.employee.DepartmentId : null, // Phòng ban
-            Gender: this.getGenderCode(this.$refs.inpGender.value), // todo pvdat xử lý lại giới tính 
-            DateOfBirth: (me.employee && me.employee.DateOfBirth) ? me.employee.DateOfBirth : null, // ngày sinh
-            PhoneNumer: (me.employee && me.employee.PhoneNumer) ? me.employee.PhoneNumer : null, // SĐT
-            Email: (me.employee && me.employee.Email) ? me.employee.Email : null, // EMail
-            Address: (me.employee && me.employee.Address) ? me.employee.Address : null, // Địa chỉ
-            IdentityNumber: (me.employee && me.employee.IdentityNumber) ? me.employee.IdentityNumber : null, // Số CMND
-            IdentityDate: (me.employee && me.employee.IdentityDate) ? me.employee.IdentityDate : null, // ngày cấp
-            IdentityPlace: (me.employee && me.employee.IdentityPlace) ? me.employee.IdentityPlace : null, // nơi cấp
-            BankAccount: (me.employee && me.employee.BankAccount) ? me.employee.BankAccount : null, // Số tài khoản ngân hàng
-            BankName: (me.employee && me.employee.BankName) ? me.employee.BankName : null, // Tên ngân hàng
-            BankBranch: (me.employee && me.employee.BankBranch) ? me.employee.BankBranch : null, // Chi nhánh tk ngân hàng
-            PositionName: (me.employee && me.employee.PositionName) ? me.employee.PositionName : null, // Chức vụ
-            LandingPhone: (me.employee && me.employee.landingPhone) ? me.employee.landingPhone : null, // Điện thoại bàn
+            employeeid: me.employee.employeeid,
+            employeecode: (me.employee && me.employee.employeecode) ? me.employee.employeecode : null, // mã nhân viên
+            fullname: (me.employee && me.employee.fullname) ? me.employee.fullname : null, // Tên nhân viên
+            departmentname: (me.employee && me.employee.departmentname) ? me.employee.departmentname : null, // Phòng ban
+            gender: this.getGenderCode(this.$refs.inpGender.value), // todo pvdat xử lý lại giới tính
+            dateofbirth: (me.employee && me.employee.dateofbirth) ? me.employee.dateofbirth : null, // ngày sinh
+            phonenumber: (me.employee && me.employee.phonenumber) ? me.employee.phonenumber : null, // SĐT
+            email: (me.employee && me.employee.email) ? me.employee.email : null, // EMail
+            address: (me.employee && me.employee.address) ? me.employee.address : null, // Địa chỉ
+            identitynumber: (me.employee && me.employee.identitynumber) ? me.employee.identitynumber : null, // Số CMND
+            identitydate: (me.employee && me.employee.identitydate) ? me.employee.identitydate : null, // ngày cấp
+            identityplace: (me.employee && me.employee.identityplace) ? me.employee.identityplace : null, // nơi cấp
+            bankaccount: (me.employee && me.employee.bankaccount) ? me.employee.bankaccount : null, // Số tài khoản ngân hàng
+            bankname: (me.employee && me.employee.bankname) ? me.employee.bankname : null, // Tên ngân hàng
+            bankbranch: (me.employee && me.employee.bankbranch) ? me.employee.bankbranch : null, // Chi nhánh tk ngân hàng
+            positionname: (me.employee && me.employee.positionname) ? me.employee.positionname : null, // Chức vụ
+            landingphone: (me.employee && me.employee.landingphone) ? me.employee.landingphone : null, // Điện thoại bàn
           }
           return employee
       } catch (ex) {
@@ -666,7 +688,7 @@ export default {
       departments: null,
       actions: formAction.createRecord,
       deleteDialog: true,
-      employeeCode: null,
+      employeecode: null,
       requiredField:[],
       currentError: null,
     };

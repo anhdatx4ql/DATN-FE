@@ -3,7 +3,7 @@
     <div class="content-header">
       <div class="content-title">{{ this.res.vi.employeeList.title }}</div>
     </div>
-    <router-link to='/DI' class="ct-header">
+    <router-link to="/DI" class="ct-header">
       <div class="ct-header__icon back-icon"></div>
       <div class="ct-header__text">{{ res.vi.di.return }}</div>
     </router-link>
@@ -22,7 +22,7 @@
           class="icon export-excel-icon"
         ></div>
         <div class="create-btn">
-          <div class="ct-btn" @click="showNewPopup"> Thêm </div>
+          <div class="ct-btn" @click="showNewPopup">Thêm</div>
           <div class="more-icon"></div>
         </div>
       </div>
@@ -48,8 +48,8 @@
             {
               title: res.vi.employeeDetail.gender,
               tooltip: res.vi.employeeDetail.gender,
-              dataField: 'GenderName',
-              dataType: 'text',
+              dataField: 'gender',
+              dataType: 'gender',
               colWidth: '150',
             },
             {
@@ -109,7 +109,7 @@
               colWidth: '200',
             },
             {
-              title:  res.vi.employeeDetail.bankBranch,
+              title: res.vi.employeeDetail.bankBranch,
               tooltip: res.vi.employeeDetail.bankBranchDetail,
               dataField: 'bankbranch',
               dataType: 'text',
@@ -123,6 +123,7 @@
           @refresh="updateTotal"
           @selectMultiple="selectMultiple"
           @duplicateData="duplicateEmployee"
+          @deleteEvent="deleteRecord"
           :muiltiple-select="true"
           :editable="true"
           :key="gridKey"
@@ -156,26 +157,30 @@
       @hideAndDelete="closeAndDelete"
       :messagse="deleteMessage"
     ></MDeleteConfirmDialog>
-    <MSingleActionDialog
-    ref="singleDialog"
-    ></MSingleActionDialog>
+    <MSingleActionDialog ref="singleDialog"></MSingleActionDialog>
     <MCircleLoader v-if="showLoader"></MCircleLoader>
   </div>
 </template>
 <script>
 import MGridData from "@/components/base-component/MGridData.vue";
 // import { ToastType } from '../base-component/MToastItem.vue';
-import MDeleteConfirmDialog, { deleteType } from "@/components/unit-components/MConfirmDeleteDialog.vue";
+import MDeleteConfirmDialog, {
+  deleteType,
+} from "@/components/unit-components/MConfirmDeleteDialog.vue";
 import { toastControl } from "@/store/toast";
-import MEmployeeDetail, { formAction } from "@/components/unit-components/MEmployeeDetail.vue";
+import MEmployeeDetail, {
+  formAction,
+} from "@/components/unit-components/MEmployeeDetail.vue";
 import { ToastType } from "@/components/base-component/MToastItem.vue";
 import MPagination from "@/components/base-component/MPagination.vue";
 import MSearchBar from "@/components/base-component/MSearchBar.vue";
 import MActionMultiple from "@/components/base-component/MActionMultiple.vue";
 import resources from "@/js/resources";
-import MSingleActionDialog, { dialogType } from "@/components/unit-components/MSingleActionDialog.vue";
+import MSingleActionDialog, {
+  dialogType,
+} from "@/components/unit-components/MSingleActionDialog.vue";
 import MCircleLoader from "@/components/base-component/MCircleLoader.vue";
-import { loader } from '@/store/loader';
+import { loader } from "@/store/loader";
 
 export default {
   name: "MEmployeeList",
@@ -185,7 +190,8 @@ export default {
     const ToastControl = toastControl();
     const Loader = loader();
     return {
-      ToastControl, Loader
+      ToastControl,
+      Loader,
     };
   },
   components: {
@@ -196,11 +202,10 @@ export default {
     MSearchBar,
     MActionMultiple,
     MSingleActionDialog,
-    MCircleLoader
+    MCircleLoader,
   },
   created() {
-    this.APIString =
-      `${this.res.endpoint}Employees/Filter?pageSize=20&pageNumber=1&keyWord=`;
+    this.APIString = `${this.res.endpoint}Employees/Filter?pageSize=20&pageNumber=1&keyWord=`;
     window.addEventListener("keydown", this.handleKeyDown);
   },
 
@@ -211,10 +216,9 @@ export default {
   watch: {},
 
   methods: {
-
     /**
      * Xóa hàng loạt bản ghi
-     * 
+     *
      * @author pvdat (14/03/2023)
      */
     multipleDelete() {
@@ -223,7 +227,7 @@ export default {
 
     /**
      * Check số lượng bản ghi được chọn
-     * 
+     *
      * @author pvdat (14/03/2023)
      */
     selectMultiple(num) {
@@ -233,7 +237,7 @@ export default {
 
     /**
      * Cập nhật api phân trang
-     * 
+     *
      * @author pvdat (14/03/2023)
      */
     updateAPIString(pageSize, pageNumber) {
@@ -273,14 +277,11 @@ export default {
      *
      * Author: pvdat (03/03/2023)
      */
-     readableDateFormater(data) {
+    readableDateFormater(data) {
       const date = new Date(data);
-      const dateVal =
-        date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+      const dateVal = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
       const month =
-        date.getMonth() < 10
-          ? "0" + (date.getMonth() + 1)
-          : date.getMonth() + 1;
+        date.getMonth() < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
       const year = date.getFullYear();
       return `${year}-${month}-${dateVal}`;
     },
@@ -301,14 +302,14 @@ export default {
       const data = await fetch(`${this.res.endpoint}Employees/NewEmployeeCode`);
       const newCode = await data.text();
       this.selectedEmployee = {
-        EmployeeCode: newCode,
-        FullName: "",
-        GenderName: "",
-        DepartmentName: "",
-        PositionName: "",
-        DateOfBirth: "",
-        IdentityNumber: "",
-      }
+        employeecode: newCode,
+        fullname: "",
+        gender: "",
+        departmentname: "",
+        positionname: "",
+        dateofbirth: "",
+        identitynumber: "",
+      };
       this.popupTitle = this.res.vi.employeeDetail.createTitle;
       this.isShowPopup = true;
     },
@@ -321,7 +322,7 @@ export default {
     },
 
     renewData() {
-      this.gridKey++;      
+      this.gridKey++;
       this.$refs.gridData.refreshData(this.APIString);
     },
 
@@ -330,7 +331,34 @@ export default {
      * Author: pvdat (02/03/2023)
      */
     closePopup() {
+      // xử lý binding lại thông tin nhân viên
+      console.log("selectedEmployee: ", this.selectedEmployee);
+
+      this.selectedEmployee.dateofbirth = this.formatDateDataClosePopup(
+        this.selectedEmployee.dateofbirth
+      );
+
+      this.selectedEmployee.identitydate = this.formatDateDataClosePopup(
+        this.selectedEmployee.identitydate
+      );
+
       this.isShowPopup = false;
+    },
+
+    /**
+     * Hàm format việc hiển thị ngày tháng đúng định dạng
+     * @param data dữ liệu ngày cần format
+     *
+     * Author: pvdat (02/03/2023)
+     */
+     formatDateDataClosePopup(data) {
+      const dateVal = new Date(data);
+      let date = dateVal.getDate();
+      let month = dateVal.getMonth() + 1;
+      const fyear = dateVal.getFullYear();
+      date = date < 10 ? "0" + date : date;
+      month = month < 10 ? "0" + month : month;
+      return `${date}/${month}/${fyear}`;
     },
 
     /**
@@ -339,9 +367,9 @@ export default {
      * Author: pvdat (02/03/2023)
      */
     editOnDbClick(employee) {
-      this.selectedEmployee = employee;
       this.action = formAction.updateRecord;
       this.popupTitle = this.res.vi.employeeDetail.updateTitle;
+      this.selectedEmployee = employee;
       this.showPopup();
     },
 
@@ -373,7 +401,7 @@ export default {
           this.deleteRecord(this.$refs.gridData.selectedData, deleteType.singleDelete);
         }
       }
-      
+
       if (event.ctrlKey && event.key === 'm'){
         event.preventDefault();
         if(this.$refs.gridData.getSelectedList().length > 0){
@@ -412,7 +440,7 @@ export default {
     deleteRecord(employee, type) {
       if (type === deleteType.singleDelete) {
         this.selectedEmployee = employee;
-        this.deleteMessage = `${this.res.vi.dialogMessage.confirmDelete} <${this.selectedEmployee.EmployeeCode}> không ?`;
+        this.deleteMessage = `${this.res.vi.dialogMessage.confirmDelete} <${employee.employeecode}> không ?`;
       } else if (type === deleteType.multipleDelete) {
         this.deleteMessage = this.res.vi.dialogMessage.confirmMultipleDelete;
       }
@@ -448,7 +476,7 @@ export default {
       try {
         if (type === deleteType.singleDelete) {
           this.$refs.gridData.deleteSelectedRow();
-          const apiString = `${this.res.endpoint}Employees/${this.selectedEmployee.EmployeeId}`;
+          const apiString = `${this.res.endpoint}Employees/${this.selectedEmployee.employeeid}`;
           const options = {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
@@ -456,13 +484,13 @@ export default {
           const res = await fetch(apiString, options);
           if (res.status === 200) {
             let data = await res.json();
-            this.ToastControl.showToastMsg(ToastType.Success,data['Message']);
+            this.ToastControl.showToastMsg(ToastType.Success, data["Message"]);
           }
         } else if (type === deleteType.multipleDelete) {
           let dataList = this.$refs.gridData.getSelectedList();
-          let idList = dataList[0].EmployeeId;
-          for (let i=1;i<dataList.length;i++){
-            idList += `,${dataList[i].EmployeeId}`;
+          let idList = dataList[0].employeeid;
+          for (let i = 1; i < dataList.length; i++) {
+            idList += `,${dataList[i].employeeid}`;
           }
           const apiString = `${this.res.endpoint}Employees/DeleteMultiple`;
           const options = {
@@ -473,7 +501,7 @@ export default {
           const res = await fetch(apiString, options);
           const data = await res.json();
           if (res.status === 200) {
-            this.ToastControl.showToastMsg(ToastType.Success, data['Message']);
+            this.ToastControl.showToastMsg(ToastType.Success, data["Message"]);
             this.totalRecord -= this.$refs.gridData.getSelectedList().length;
             this.$refs.gridData.deleteSelectedMultipleRow();
             this.selectMultiple(0);
@@ -490,17 +518,17 @@ export default {
 
     /**
      * Filter khi nhập tìm kiếm
-     * 
+     *
      * @author pvdat (23/03/2023)
      */
     searchOnInput(key) {
-      this.keyWord = key ? key:"";
-        this.updateAPIString(this.pageSize, this.currentPage);
+      this.keyWord = key ? key : "";
+      this.updateAPIString(this.pageSize, this.currentPage);
     },
 
     /**
      * Xuất dữ liệu hiện tại ra excel
-     * 
+     *
      * @author pvdat (23/03/2023)
      */
     async excelExport() {
@@ -516,9 +544,9 @@ export default {
           a.remove();
           this.Loader.closeLoader();
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
-        })
+        });
       // const link = window.URL.createObjectURL(res);
       // console.log(link);
       // new JsFileDownloader({url: link});
@@ -529,14 +557,18 @@ export default {
      *
      * @author  pvdat (12/03/2023)
      */
-    async duplicateEmployee(employee){
+    async duplicateEmployee(employee) {
       this.action = formAction.duplicateRecord;
       this.selectedEmployee = employee;
       const newCode = await fetch(`${this.res.endpoint}Employees/NewEmployeeCode`);
       const data = await newCode.text();
-      this.selectedEmployee.EmployeeCode = data;
-      this.selectedEmployee.DateOfBirth = this.readableDateFormater(this.selectedEmployee.DateOfBirth);
-      this.selectedEmployee.IdentityDate = this.readableDateFormater(this.selectedEmployee.IdentityDate);
+      this.selectedEmployee.employeecode = data;
+      this.selectedEmployee.dateofbirth = this.readableDateFormater(
+        this.selectedEmployee.dateofbirth
+      );
+      this.selectedEmployee.identitydate = this.readableDateFormater(
+        this.selectedEmployee.identitydate
+      );
       this.popupTitle = this.res.vi.employeeDetail.createTitle;
       this.isShowPopup = true;
     },
@@ -546,9 +578,9 @@ export default {
      *
      * @author  pvdat (12/03/2023)
      */
-    updateGridData(employee){
-     this.$refs.gridData.gridData.push(employee);
-     this.gridKey++;
+    updateGridData(employee) {
+      this.$refs.gridData.gridData.push(employee);
+      this.gridKey++;
     },
 
     /**
@@ -556,8 +588,12 @@ export default {
      *
      * @author  pvdat (12/03/2023)
      */
-    showDeveloping(){
-      this.$refs.singleDialog.showDialogOn(dialogType.info, resources.vi.dialogMessage.developing, resources.vi.btnAction.close)
+    showDeveloping() {
+      this.$refs.singleDialog.showDialogOn(
+        dialogType.info,
+        resources.vi.dialogMessage.developing,
+        resources.vi.btnAction.close
+      );
     },
 
     /**
@@ -565,11 +601,11 @@ export default {
      *
      * @author  pvdat (12/03/2023)
      */
-    reloadEmployeeDetail(){
+    reloadEmployeeDetail() {
       this.closePopup();
       this.showNewPopup();
       this.popupKey++;
-    }
+    },
   },
   data() {
     return {
@@ -606,7 +642,7 @@ export default {
   cursor: pointer;
 }
 
-.ct-header{
+.ct-header {
   display: flex;
   font-size: 13px;
   height: 22px;
@@ -618,7 +654,7 @@ export default {
   color: #0075c0;
 }
 
-.create-btn{
+.create-btn {
   height: 28px;
   width: 100px;
   background-color: #2ca01c;
@@ -628,7 +664,7 @@ export default {
   cursor: pointer;
 }
 
-.ct-btn{
+.ct-btn {
   color: #fff;
   font-size: 13px;
   font-family: Notosans-bold;
@@ -640,11 +676,11 @@ export default {
   border-right: solid #fff 1px;
 }
 
-.more-icon{
+.more-icon {
   margin-top: 3px;
   margin-left: 6px;
   height: 22px;
   width: 22px;
-  background: url('@/assets/img/Sprites.64af8f61.svg') no-repeat -846px -356px;
+  background: url("@/assets/img/Sprites.64af8f61.svg") no-repeat -846px -356px;
 }
 </style>
