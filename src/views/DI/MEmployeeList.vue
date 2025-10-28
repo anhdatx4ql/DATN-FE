@@ -351,7 +351,7 @@ export default {
      *
      * Author: pvdat (02/03/2023)
      */
-     formatDateDataClosePopup(data) {
+    formatDateDataClosePopup(data) {
       const dateVal = new Date(data);
       let date = dateVal.getDate();
       let month = dateVal.getMonth() + 1;
@@ -369,6 +369,7 @@ export default {
     editOnDbClick(employee) {
       this.action = formAction.updateRecord;
       this.popupTitle = this.res.vi.employeeDetail.updateTitle;
+      console.log("employee edit LIST : ", employee);
       this.selectedEmployee = employee;
       this.showPopup();
     },
@@ -390,31 +391,31 @@ export default {
      * Hàm xử lý phím tắt
      */
     handleKeyDown(event) {
-      if (event.ctrlKey && event.key === '1'){
+      if (event.ctrlKey && event.key === "1") {
         event.preventDefault();
         this.showNewPopup();
       }
 
-      if (event.ctrlKey && event.key === 'd'){
+      if (event.ctrlKey && event.key === "d") {
         event.preventDefault();
         if (this.$refs.gridData.selectedData) {
           this.deleteRecord(this.$refs.gridData.selectedData, deleteType.singleDelete);
         }
       }
 
-      if (event.ctrlKey && event.key === 'm'){
+      if (event.ctrlKey && event.key === "m") {
         event.preventDefault();
-        if(this.$refs.gridData.getSelectedList().length > 0){
+        if (this.$refs.gridData.getSelectedList().length > 0) {
           this.deleteRecord(null, deleteType.multipleDelete);
         }
       }
 
-      if (event.ctrlKey && event.key === 'r') {
+      if (event.ctrlKey && event.key === "r") {
         event.preventDefault();
         this.reloadData();
       }
 
-      if (event.ctrlKey && event.key === 'e') {
+      if (event.ctrlKey && event.key === "e") {
         event.preventDefault();
         this.excelExport();
       }

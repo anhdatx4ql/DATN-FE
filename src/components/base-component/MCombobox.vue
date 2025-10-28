@@ -61,8 +61,22 @@ export default {
       type: String,
       required: true,
     },
+
+    // ID của department để hiển thị tên tương ứng
+    selectedId: {
+      type: [String, Number],
+      required: false,
+      default: null
+    },
+    
+    // Tên trường ID trong dữ liệu
+    idField: {
+      type: String,
+      required: false,
+      default: 'id'
+    }
   },
-  emits: ["update:modelValue"],
+  emits: ["update:modelValue", "item-selected"],
   data() {
     return {
       data: [],
@@ -76,6 +90,23 @@ export default {
     // Cập nhật giá trị nội bộ khi modelValue thay đổi từ bên ngoài
     modelValue(newValue) {
       this.value = newValue;
+    },
+    // Watch mới để cập nhật khi dữ liệu được tải
+    data: {
+      handler(newData) {
+        // Nếu có selectedId và data đã được tải
+        if (this.selectedId && newData && newData.length > 0) {
+          this.setValueById(this.selectedId);
+        }
+      },
+      immediate: true
+    },
+    
+    // Watch khi selectedId thay đổi
+    selectedId(newId) {
+      if (newId && this.data && this.data.length > 0) {
+        this.setValueById(newId);
+      }
     }
   },
   created() {
@@ -162,7 +193,25 @@ export default {
      * @author pvdat(05/03/2023)
      */
     updateItem() {
-      const items = this.$refs.itemList.children; if (!items[this.selectedIndex]) return; // Bỏ highlight tất cả các item for (const item of items) { item.classList.remove("selected-item"); } // Highlight item được chọn items[this.selectedIndex].classList.add("selected-item"); const selectedValue = items[this.selectedIndex].textContent.trim(); this.value = selectedValue; this.$emit("update:modelValue", selectedValue);
+      const items = this.$refs.itemList.children; 
+      if (!items[this.selectedIndex]) return; 
+      
+      // Bỏ highlight tất cả các item 
+      for (const item of items) { 
+        item.classList.remove("selected-item"); 
+      } 
+      
+      // Highlight item được chọn 
+      items[this.selectedIndex].classList.add("selected-item"); 
+      const selectedValue = items[this.selectedIndex].textContent.trim(); 
+      this.value = selectedValue; 
+      this.$emit("update:modelValue", selectedValue);
+      
+      // Tìm và emit item được chọn
+      const selectedItem = this.data.find(item => item[this.modelName] === selectedValue);
+      if (selectedItem) {
+        this.$emit("item-selected", selectedItem);
+      }
     },
 
     /**
@@ -179,7 +228,17 @@ export default {
         { 
           this.selectedIndex = i; this.updateItem(); break; 
         } 
+      }
+      
+      // Tìm index của item được click để highlight 
+      for (let i = 0; i < this.$refs.itemList.children.length; i++) {
+        if (this.$refs.itemList.children[i].textContent.trim() === selectedText) { 
+          this.selectedIndex = i; 
+          this.updateItem(); 
+          break; 
+        } 
       } 
+
       // Đóng dropdown sau khi chọn 
       this.isShow = false; 
     }, 
@@ -272,6 +331,18 @@ export default {
     getInputName() {
       return this.title;
     },
+     /**
+     * Thiết lập giá trị hiển thị dựa trên ID
+     * @param {String|Number} id - ID của item cần hiển thị
+     * @author pvdat (29/10/2025)
+     */
+    setValueById(id) {
+      const item = this.data.find(item => item[this.idField] == id);
+      if (item) {
+        this.value = item[this.modelName];
+        this.$emit("update:modelValue", this.value);
+      }
+    }
   },
 };
 </script>

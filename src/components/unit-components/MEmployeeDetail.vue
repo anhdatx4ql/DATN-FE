@@ -65,7 +65,10 @@
                   title="Phòng ban"
                   :api="this.res.endpoint + 'Department'"
                   modelName="departmentname" 
-                  v-model="employee.departmentname"
+                  :selectedId="employee.departmentid"
+                  idField="departmentid"
+                  v-model="selectedDepartmentName"
+                  @item-selected="onDepartmentSelected"
                   :isRequired="true"
                   ref="'inpDepartment"
                 />
@@ -215,7 +218,6 @@ import { ToastType } from "../base-component/MToastItem.vue";
 import MRadioButton from "../base-component/MRadioButton.vue";
 import MCheckbox from "../base-component/MCheckbox.vue";
 import MSingleActionDialog, {dialogType} from "./MSingleActionDialog.vue";
-import { GenderCode } from '@/js/enum';
 
 export const formAction = {
   createRecord: 0,
@@ -265,6 +267,7 @@ export default {
 
   created() {
     this.actions = this.action;
+    console.log("employee edit detail: ", this.employeeSelected);
     this.employee = this.employeeSelected;
     window.addEventListener("keydown", this.handleKeyDown);
   },
@@ -279,10 +282,10 @@ export default {
 
   watch: {
     // employee: {
-    //   handler: function(newVal){
-    //     console.log("Data change: ", newVal.EmployeeCode);
-    //   },
-    //   deep: true
+      //   handler: function(newVal){
+      //     console.log("Data change: ", newVal.EmployeeCode);
+      //   },
+      //   deep: true
     // }
   },
 
@@ -311,6 +314,19 @@ export default {
   },
 
   methods: {
+    /**
+     * Xử lý khi người dùng chọn một phòng ban
+     * @param item 
+     * @author pvdat(10.29.2025)
+     */
+    onDepartmentSelected(item) {
+      // Cập nhật departmentid
+      this.departmentid = item.departmentid;
+      console.log('Đã chọn phòng ban:', item.departmentname);
+      console.log('ID phòng ban:', this.departmentid);
+      
+      this.employee.departmentid = item.departmentid;
+    },
     /**
      * Hàm format dữ liệu ngày thàng
      *
@@ -493,12 +509,8 @@ export default {
      */
     valueValidate(){
 
-      this.requiredField.forEach(el => {
-        el.validate();
-      })
-
       for(let i = 0; i<this.requiredField.length; i++){
-        if (this.requiredField[i].isError) {
+        if (this.requiredField[i] && this.requiredField[i].isError) {
           this.currentError= this.requiredField[i]
           this.$refs.singleDialog.showDialogOn(dialogType.info, this.requiredField[i].getInputName() + " không được để trống.", resources.vi.btnAction.close);
           return false;
@@ -516,6 +528,7 @@ export default {
     async saveData(reload) {
       this.closeDialog();
       try{
+        console.log(this.getInputData());
         if (this.valueValidate()){
           const newEmployee = this.getInputData();
             let res = "";
@@ -632,10 +645,10 @@ export default {
      */
     getGenderCode(name){
       switch(name){
-        case "Nam": return GenderCode.Male;
-        case "Nữ": return GenderCode.Female;
-        case "Other": return GenderCode.Other;
-        default: return GenderCode.Unknow;
+        case "Nam": return 0;
+        case "Nữ": return 1;
+        case "Other": return 2;
+        default: return 0;
       }
     },
 
@@ -647,11 +660,13 @@ export default {
     getInputData(){
       try{
         let me = this;
+        console.log("employee data: ", me.selectedDepartmentName);
+        console.log("employee data: ", me.employee.departmentid);
         const employee = {
             employeeid: me.employee.employeeid,
             employeecode: (me.employee && me.employee.employeecode) ? me.employee.employeecode : null, // mã nhân viên
             fullname: (me.employee && me.employee.fullname) ? me.employee.fullname : null, // Tên nhân viên
-            departmentname: (me.employee && me.employee.departmentname) ? me.employee.departmentname : null, // Phòng ban
+            departmentid: (me.employee && me.employee.departmentid) ? me.employee.departmentid : null, // Phòng ban
             gender: this.getGenderCode(this.$refs.inpGender.value), // todo pvdat xử lý lại giới tính
             dateofbirth: (me.employee && me.employee.dateofbirth) ? me.employee.dateofbirth : null, // ngày sinh
             phonenumber: (me.employee && me.employee.phonenumber) ? me.employee.phonenumber : null, // SĐT
@@ -691,6 +706,7 @@ export default {
       employeecode: null,
       requiredField:[],
       currentError: null,
+      selectedDepartmentName: '', // Biến để lưu tên phòng ban được chọn
     };
   },
 };
