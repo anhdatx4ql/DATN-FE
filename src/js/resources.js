@@ -44,6 +44,32 @@ let resources =  {
             bankBranchDetail: "Chi nhánh tài khoản ngân hàng"
             
         },
+        supplierDetail:{
+            createTitle: "Thông tin nhà cung cấp",
+            updateTitle: "Sửa nhà cung cấp",
+            customer: "Là khách hàng",
+            supplier: "Là nhà cung cấp",
+            code: "Mã",
+            fullName: "Tên",
+            department: "Phòng ban",
+            position: "Chức danh",
+            dob: "Ngày sinh",
+            gender: "Giới tính",
+            identity: "Số CMND",
+            identityDetail: "Số chứng minh nhân dân",
+            dateOfIssue: "Ngày cấp",
+            issuedBy: "Nơi cấp",
+            address: "Địa chỉ",
+            phoneNumber: "ĐT di động",
+            phoneNumberDetail: "Điện thoại di động",
+            landingPhone: "ĐT cố định",
+            landingPhoneDetail: "Điện thoại cố định",
+            bankAccount: "Số tài khoản ngân hàng",
+            bankName: "Tên ngân hàng",
+            bankBranch: "Chi nhánh tk ngân hàng",
+            bankBranchDetail: "Chi nhánh tài khoản ngân hàng"
+            
+        },
         dialogMessage:{
             confirmDelete: "Bạn có muốn xóa nhân viên ",
             confirmDeleteAccount: "Bạn có thực sự muốn xóa Tài khoản ",

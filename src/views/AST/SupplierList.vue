@@ -293,7 +293,7 @@
       editOnDbClick(employee) {
         this.selectedEmployee = employee;
         this.action = formAction.updateRecord;
-        this.popupTitle = this.res.vi.employeeDetail.updateTitle;
+        this.popupTitle = this.res.vi.supplierDetail.updateTitle;
         this.showPopup();
       },
   
@@ -364,9 +364,9 @@
       deleteRecord(employee, type) {
         if (type === deleteType.singleDelete || typeof(type) == 'undefined') {
           this.selectedEmployee = employee;
-          this.deleteMessage = `Bạn có chắc muốn xóa thiết bị <${this.selectedEmployee['assetcode']}> không ?`;
+          this.deleteMessage = `Bạn có chắc muốn xóa nhà cung cấp <${this.selectedEmployee['assetcode']}> không ?`;
         } else if (type === deleteType.multipleDelete) {
-          this.deleteMessage = 'Bạn có chắc muốn xóa những thiết bị đã chọn không ?';
+          this.deleteMessage = 'Bạn có chắc muốn xóa những nhà cung cấp đã chọn không ?';
         }
   
         this.showDeleteDialog(type);

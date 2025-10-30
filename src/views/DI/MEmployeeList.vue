@@ -122,7 +122,7 @@
           @dbClicked="editOnDbClick"
           @refresh="updateTotal"
           @selectMultiple="selectMultiple"
-          @duplicateData="duplicateEmployee"
+          @duplicateEvent="duplicateEmployee"
           @deleteEvent="deleteRecord"
           :muiltiple-select="true"
           :editable="true"
