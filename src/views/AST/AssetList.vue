@@ -67,6 +67,20 @@
                 colWidth: '200',
               },
               {
+                title: 'Cấp phát cho',
+                tooltip: 'Cấp phát cho',
+                dataField: 'employeename',
+                dataType: 'text',
+                colWidth: '200',
+              },
+              {
+                title: 'Số lần bị hư hỏng',
+                tooltip: 'Số lần bị hư hỏng',
+                dataField: 'countassetdamaged',
+                dataType: 'text',
+                colWidth: '200',
+              },
+              {
                 title: 'Ngày mua',
                 tooltip: 'Ngày mua',
                 dataField: 'boughtat',
@@ -78,13 +92,6 @@
                 tooltip: 'Hạn bảo hành',
                 dataField: 'warrantyto',
                 dataType: 'date',
-                colWidth: '200',
-              },
-              {
-                title: 'Cấp phát cho',
-                tooltip: 'Cấp phát cho',
-                dataField: 'employeename',
-                dataType: 'text',
                 colWidth: '200',
               },
             ]"
@@ -315,9 +322,9 @@
         this.showDetail = true;
         setTimeout(() => {
           /*eslint-disable no-debugger */
-          debugger
           if (asset['boughtat']) asset['boughtat'] = this.formatDateToDisplay(asset['boughtat']);
           if (asset['warrantyto']) asset['warrantyto'] = this.formatDateToDisplay(asset['warrantyto']);
+          asset.statusOld = asset.status;
           this.$refs.assetDetail.form = asset;
           this.$refs.assetDetail.formMode = 1;
         }, 100);

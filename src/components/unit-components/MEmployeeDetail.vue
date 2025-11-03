@@ -267,8 +267,9 @@ export default {
 
   created() {
     this.actions = this.action;
-    console.log("employee edit detail: ", this.employeeSelected);
     this.employee = this.employeeSelected;
+    this.oldData = this.employeeSelected;
+    console.log("employee oldData edit detail: ", this.oldData);
     window.addEventListener("keydown", this.handleKeyDown);
   },
 
@@ -707,6 +708,7 @@ export default {
       requiredField:[],
       currentError: null,
       selectedDepartmentName: '', // Biến để lưu tên phòng ban được chọn
+      oldData: null,
     };
   },
 };
