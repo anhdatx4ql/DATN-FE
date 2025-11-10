@@ -157,7 +157,7 @@ export default {
     .overlay{
         height: 100%;
         width: 100%;
-        background-image: linear-gradient(#ddd6f3, #faaca8);
+        background-image: linear-gradient(#6c44eb, #bf7571);
     }
     .main{
         height: 675px;

@@ -910,15 +910,18 @@ table thead tr th{
     -moz-column-gap: 8px !important;
     column-gap: 8px !important;
     border-bottom: solid #bfbfbf 1px !important;
-    position: unset !important;
     border-radius: 0 !important;
-    display: inline-masonry !important;
+    position: unset !important;
+    z-index: 1;
 }
-th.gender {
-    border-bottom: solid #bfbfbf 1px !important;
-    position: unset !important;
-    border-radius: 0 !important;
-    display: inline-masonry !important;
+
+/* CSS cụ thể hơn cho th.gender */
+.grid-table thead tr th.gender {
+  position: sticky !important;
+    top: -1px !important;
+    z-index: 11 !important;
+    background-color: #e5e8ec !important;
+    display: table-cell;
 }
 
 .status-1{

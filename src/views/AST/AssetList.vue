@@ -101,7 +101,7 @@
             @dbClicked="editOnDbClick"
             @refresh="updateTotal"
             @selectMultiple="selectMultiple"
-            @duplicateData="duplicateEmployee"
+            @duplicateEvent="duplicateEmployee"
             :muiltiple-select="true"
             :editable="true"
             :key="gridKey"

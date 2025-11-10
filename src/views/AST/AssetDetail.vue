@@ -118,7 +118,7 @@ import { ToastType } from '@/components/base-component/MToastItem.vue';
             }
             if (!this.form.status) {
                 this.$refs.status.$el.querySelector("input").classList.add('input-required');
-                inValidField = !inValidField ? 'Trạng thái' : inValidField + ', trạng thái';
+                inValidField = !inValidField ? 'Tình trạng' : inValidField + ', tình trạng';
                 isValid = false;
             }
             else {
